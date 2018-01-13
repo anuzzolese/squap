@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY squap "https://w3id.org/squap/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY dul "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#" >
+]>
+
+
+<rdf:RDF xmlns="&squap;squap-dul.owl#"
+     xml:base="&squap;squap-dul.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:squap="https://w3id.org/squap/">
+    <owl:Ontology rdf:about="&squap;squap-dul.owl">
+        <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <owl:imports rdf:resource="https://w3id.org/squap/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#classifies -->
+
+    <rdf:Description rdf:about="&dul;classifies">
+        <owl:equivalentProperty rdf:resource="&squap;classifies"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting -->
+
+    <rdf:Description rdf:about="&dul;hasSetting">
+        <owl:equivalentProperty rdf:resource="&squap;hasSetting"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isClassifiedBy -->
+
+    <rdf:Description rdf:about="&dul;isClassifiedBy">
+        <owl:equivalentProperty rdf:resource="&squap;isClassifiedBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isConceptUsedIn -->
+
+    <rdf:Description rdf:about="&dul;isConceptUsedIn">
+        <owl:equivalentProperty rdf:resource="&squap;isConceptUsedIn"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSatisfiedBy -->
+
+    <rdf:Description rdf:about="&dul;isSatisfiedBy">
+        <owl:equivalentProperty rdf:resource="&squap;isSatisfiedBy"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isSpecializedBy -->
+
+    <rdf:Description rdf:about="&dul;isSpecializedBy">
+        <owl:equivalentProperty rdf:resource="&squap;isSpecializedBy"/>
+        <owl:equivalentProperty rdf:resource="&squap;specializes"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#satisfies -->
+
+    <rdf:Description rdf:about="&dul;satisfies">
+        <owl:equivalentProperty rdf:resource="&squap;satisfies"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#specializes -->
+
+    <rdf:Description rdf:about="&dul;specializes">
+        <owl:equivalentProperty rdf:resource="&squap;specializes"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#usesConcept -->
+
+    <rdf:Description rdf:about="&dul;usesConcept">
+        <owl:equivalentProperty rdf:resource="&squap;usesConcept"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/squap/classifies -->
+
+    <rdf:Description rdf:about="&squap;classifies"/>
+    
+
+
+    <!-- https://w3id.org/squap/hasSetting -->
+
+    <rdf:Description rdf:about="&squap;hasSetting"/>
+    
+
+
+    <!-- https://w3id.org/squap/isClassifiedBy -->
+
+    <rdf:Description rdf:about="&squap;isClassifiedBy"/>
+    
+
+
+    <!-- https://w3id.org/squap/isConceptUsedIn -->
+
+    <rdf:Description rdf:about="&squap;isConceptUsedIn"/>
+    
+
+
+    <!-- https://w3id.org/squap/isSatisfiedBy -->
+
+    <rdf:Description rdf:about="&squap;isSatisfiedBy"/>
+    
+
+
+    <!-- https://w3id.org/squap/isSpecializedBy -->
+
+    <rdf:Description rdf:about="&squap;isSpecializedBy"/>
+    
+
+
+    <!-- https://w3id.org/squap/satisfies -->
+
+    <rdf:Description rdf:about="&squap;satisfies"/>
+    
+
+
+    <!-- https://w3id.org/squap/specializes -->
+
+    <rdf:Description rdf:about="&squap;specializes"/>
+    
+
+
+    <!-- https://w3id.org/squap/usesConcept -->
+
+    <rdf:Description rdf:about="&squap;usesConcept"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/squap/amount -->
+
+    <rdf:Description rdf:about="&squap;amount">
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegionDataValue"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Amount -->
+
+    <rdf:Description rdf:about="&dul;Amount">
+        <owl:equivalentClass rdf:resource="&squap;Amount"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept -->
+
+    <rdf:Description rdf:about="&dul;Concept">
+        <owl:equivalentClass rdf:resource="&squap;Concept"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description -->
+
+    <rdf:Description rdf:about="&dul;Description">
+        <owl:equivalentClass rdf:resource="&squap;Description"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Entity -->
+
+    <rdf:Description rdf:about="&dul;Entity">
+        <owl:equivalentClass rdf:resource="&squap;Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Parameter -->
+
+    <rdf:Description rdf:about="&dul;Parameter">
+        <owl:equivalentClass rdf:resource="&squap;Parameter"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region -->
+
+    <rdf:Description rdf:about="&dul;Region">
+        <owl:equivalentClass rdf:resource="&squap;Region"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation -->
+
+    <rdf:Description rdf:about="&dul;Situation">
+        <owl:equivalentClass rdf:resource="&squap;Situation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#UnitOfMeasure -->
+
+    <rdf:Description rdf:about="&dul;UnitOfMeasure">
+        <owl:equivalentClass rdf:resource="&squap;UnitOfMeasure"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/squap/Amount -->
+
+    <rdf:Description rdf:about="&squap;Amount"/>
+    
+
+
+    <!-- https://w3id.org/squap/Characteristic -->
+
+    <rdf:Description rdf:about="&squap;Characteristic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&dul;Parameter"/>
+                    <rdf:Description rdf:about="&dul;Quality"/>
+                    <rdf:Description rdf:about="&dul;Region"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/squap/Concept -->
+
+    <rdf:Description rdf:about="&squap;Concept"/>
+    
+
+
+    <!-- https://w3id.org/squap/Description -->
+
+    <rdf:Description rdf:about="&squap;Description"/>
+    
+
+
+    <!-- https://w3id.org/squap/Entity -->
+
+    <rdf:Description rdf:about="&squap;Entity"/>
+    
+
+
+    <!-- https://w3id.org/squap/Parameter -->
+
+    <rdf:Description rdf:about="&squap;Parameter"/>
+    
+
+
+    <!-- https://w3id.org/squap/Region -->
+
+    <rdf:Description rdf:about="&squap;Region"/>
+    
+
+
+    <!-- https://w3id.org/squap/Situation -->
+
+    <rdf:Description rdf:about="&squap;Situation"/>
+    
+
+
+    <!-- https://w3id.org/squap/UnitOfMeasure -->
+
+    <rdf:Description rdf:about="&squap;UnitOfMeasure"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

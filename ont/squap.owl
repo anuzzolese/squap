@@ -1,0 +1,3004 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY prc-maturity "https://w3id.org/squap/ProcessMaturity/" >
+    <!ENTITY sw-quality "https://w3id.org/squap/SoftwareQuality/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY arc-alignment "https://w3id.org/squap/ArchitecturalAlignment/" >
+    <!ENTITY factor "https://w3id.org/squap/SoftwareSystemQualityFactor/" >
+]>
+
+
+<rdf:RDF xmlns="https://w3id.org/squap/"
+     xml:base="https://w3id.org/squap/"
+     xmlns:arc-alignment="https://w3id.org/squap/ArchitecturalAlignment/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:sw-quality="https://w3id.org/squap/SoftwareQuality/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:factor="https://w3id.org/squap/SoftwareSystemQualityFactor/"
+     xmlns:prc-maturity="https://w3id.org/squap/ProcessMaturity/">
+    <owl:Ontology rdf:about="https://w3id.org/squap/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/squap/affectsMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/affectsMeasurementOf">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/FactorOccurrence"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/isAffectedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/assesses -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/assesses">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/isClassifiedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/basedOnMetric -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/basedOnMetric">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Metric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/classifies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/classifies">
+        <rdfs:range rdf:resource="&owl;Thing"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/hasMetric -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/hasMetric">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Metric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/hasValue -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/hasValue">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Value"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isAffectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isAffectedBy">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/FactorOccurrence"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isAssessedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isAssessedBy">
+        <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/assesses"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/classifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isClassifiedBy">
+        <rdfs:domain rdf:resource="&owl;Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isConceptUsedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isConceptUsedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Description"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/usesConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isFactorSatisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isFactorSatisfiedBy">
+        <rdfs:range rdf:resource="https://w3id.org/squap/FactorOccurrence"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/isSatisfiedBy"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/satisfiesFactor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isMetricOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isMetricOf">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Metric"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/hasMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isMetricUsedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isMetricUsedBy">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Metric"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/basedOnMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isParametrizedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isParametrizedBy">
+        <rdfs:range rdf:resource="https://w3id.org/squap/Parameter"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Region"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/isClassifiedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isQualityCharacteristicUsedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isQualityCharacteristicUsedIn">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/isConceptUsedIn"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/usesQualityCharacteristic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isSatisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isSatisfiedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Description"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Situation"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/satisfies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isSpecializedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isSpecializedBy">
+        <rdfs:range rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Concept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isValueOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isValueOf">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Value"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/hasValue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/parametrizes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/parametrizes">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Parameter"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Region"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/classifies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/satisfies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/satisfies">
+        <rdfs:range rdf:resource="https://w3id.org/squap/Description"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/satisfiesFactor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/satisfiesFactor">
+        <rdfs:domain rdf:resource="https://w3id.org/squap/FactorOccurrence"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/satisfies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/specializes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/specializes">
+        <rdfs:range rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Concept"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/isSpecializedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/usesConcept -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/usesConcept">
+        <rdfs:range rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Description"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/squap/usesConcept"/>
+            <rdf:Description rdf:about="https://w3id.org/squap/specializes"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/usesQualityCharacteristic -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/usesQualityCharacteristic">
+        <rdfs:range rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/squap/usesConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/squap/value -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/squap/value">
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Value"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/ArchitecturalAlignment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignmentResult -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/ArchitecturalAlignmentResult">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Concept -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Concept">
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/Description"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Description -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Description">
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/FactorOccurrence -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/FactorOccurrence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/satisfies"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/MeasurementResult -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/MeasurementResult">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/assesses"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/hasValue"/>
+                <owl:onClass rdf:resource="https://w3id.org/squap/Value"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/hasMetric"/>
+                <owl:onClass rdf:resource="https://w3id.org/squap/Metric"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Metric -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Metric"/>
+    
+
+
+    <!-- https://w3id.org/squap/Parameter -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Parameter"/>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/ProcessMaturity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturityResult -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/ProcessMaturityResult">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Region -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Region"/>
+    
+
+
+    <!-- https://w3id.org/squap/Situation -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Situation"/>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/SoftwareQuality">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQualityCharacteristic -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/SoftwareQualityCharacteristic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/squap/ArchitecturalAlignment"/>
+                    <rdf:Description rdf:about="https://w3id.org/squap/ProcessMaturity"/>
+                    <rdf:Description rdf:about="https://w3id.org/squap/SoftwareQuality"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQualityFactor -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/SoftwareQualityFactor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Description"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/usesQualityCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/usesQualityCharacteristic"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQualityResult -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/SoftwareQualityResult">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Value -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Value">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Region"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/value"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureDescription -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureDescription">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureFramework -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureFramework">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureModel -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureModel">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureRational -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureRational">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureView -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureView">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureViewpoint -->
+
+    <owl:Class rdf:about="&arc-alignment;ArchitectureViewpoint">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Concern -->
+
+    <owl:Class rdf:about="&arc-alignment;Concern">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Correspondence -->
+
+    <owl:Class rdf:about="&arc-alignment;Correspondence">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/CorrespondenceRules -->
+
+    <owl:Class rdf:about="&arc-alignment;CorrespondenceRules">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Environment -->
+
+    <owl:Class rdf:about="&arc-alignment;Environment">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ModelKind -->
+
+    <owl:Class rdf:about="&arc-alignment;ModelKind">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ObjectiveCharacteristic -->
+
+    <owl:Class rdf:about="&arc-alignment;ObjectiveCharacteristic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Stakeholder -->
+
+    <owl:Class rdf:about="&arc-alignment;Stakeholder">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/SubjectiveCharacteristic -->
+
+    <owl:Class rdf:about="&arc-alignment;SubjectiveCharacteristic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/System-of-Interest -->
+
+    <owl:Class rdf:about="&arc-alignment;System-of-Interest">
+        <rdfs:subClassOf rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ContractingAndSkills -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/ContractingAndSkills">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/CustomSoftwareQuality -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/CustomSoftwareQuality">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DocumentationStandardsAndTools -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/LackingToolsAndMethodologies -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/LackingToolsAndMethodologies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ModuleInterfacesComplexity -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/ModuleInterfacesComplexity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/PackagesVsDocumentation -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsRequirements -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsSystemAnalysis -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsSystemAnalysis">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsTimeAndBudget -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsTimeAndBudget">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/RequirementsVsMethodologies -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/RequirementsVsMethodologies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies -->
+
+    <owl:Class rdf:about="https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Acquisition -->
+
+    <owl:Class rdf:about="&prc-maturity;Acquisition">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Primary"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Audit -->
+
+    <owl:Class rdf:about="&prc-maturity;Audit">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/ConfigurationManagement -->
+
+    <owl:Class rdf:about="&prc-maturity;ConfigurationManagement">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Development -->
+
+    <owl:Class rdf:about="&prc-maturity;Development">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Primary"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Documentation -->
+
+    <owl:Class rdf:about="&prc-maturity;Documentation">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Improvement -->
+
+    <owl:Class rdf:about="&prc-maturity;Improvement">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Organisational"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Infrastructure -->
+
+    <owl:Class rdf:about="&prc-maturity;Infrastructure">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Organisational"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/JointReview -->
+
+    <owl:Class rdf:about="&prc-maturity;JointReview">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Maintenance -->
+
+    <owl:Class rdf:about="&prc-maturity;Maintenance">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Primary"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Management -->
+
+    <owl:Class rdf:about="&prc-maturity;Management">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Organisational"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Operation -->
+
+    <owl:Class rdf:about="&prc-maturity;Operation">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Primary"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Organisational -->
+
+    <owl:Class rdf:about="&prc-maturity;Organisational">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Primary -->
+
+    <owl:Class rdf:about="&prc-maturity;Primary">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/ProblemResolution -->
+
+    <owl:Class rdf:about="&prc-maturity;ProblemResolution">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/QualityAssurance -->
+
+    <owl:Class rdf:about="&prc-maturity;QualityAssurance">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Supply -->
+
+    <owl:Class rdf:about="&prc-maturity;Supply">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Primary"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Supporting -->
+
+    <owl:Class rdf:about="&prc-maturity;Supporting">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Training -->
+
+    <owl:Class rdf:about="&prc-maturity;Training">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Organisational"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Validation -->
+
+    <owl:Class rdf:about="&prc-maturity;Validation">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Verification -->
+
+    <owl:Class rdf:about="&prc-maturity;Verification">
+        <rdfs:subClassOf rdf:resource="&prc-maturity;Supporting"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/AccessibilityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;AccessibilityInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Accountability -->
+
+    <owl:Class rdf:about="&sw-quality;Accountability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Accuracy -->
+
+    <owl:Class rdf:about="&sw-quality;Accuracy">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Adaptability -->
+
+    <owl:Class rdf:about="&sw-quality;Adaptability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Transferability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Analysability -->
+
+    <owl:Class rdf:about="&sw-quality;Analysability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Appropriateness -->
+
+    <owl:Class rdf:about="&sw-quality;Appropriateness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/AppropriatenessRecognisability -->
+
+    <owl:Class rdf:about="&sw-quality;AppropriatenessRecognisability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Attractiveness -->
+
+    <owl:Class rdf:about="&sw-quality;Attractiveness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Authenticity -->
+
+    <owl:Class rdf:about="&sw-quality;Authenticity">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Availability -->
+
+    <owl:Class rdf:about="&sw-quality;Availability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Changeability -->
+
+    <owl:Class rdf:about="&sw-quality;Changeability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Co-existence -->
+
+    <owl:Class rdf:about="&sw-quality;Co-existence">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Comfort -->
+
+    <owl:Class rdf:about="&sw-quality;Comfort">
+        <rdfs:subClassOf rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/CommercialDamageInUse -->
+
+    <owl:Class rdf:about="&sw-quality;CommercialDamageInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Compatibility -->
+
+    <owl:Class rdf:about="&sw-quality;Compatibility">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/CompatibilityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;CompatibilityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Confidentiality -->
+
+    <owl:Class rdf:about="&sw-quality;Confidentiality">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ContextConformityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;ContextConformityInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ContextExtendibilityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;ContextExtendibilityInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EaseOfUse -->
+
+    <owl:Class rdf:about="&sw-quality;EaseOfUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EffectivenessInUse -->
+
+    <owl:Class rdf:about="&sw-quality;EffectivenessInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EfficiencyInUse -->
+
+    <owl:Class rdf:about="&sw-quality;EfficiencyInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EnvironmentalHarmInUse -->
+
+    <owl:Class rdf:about="&sw-quality;EnvironmentalHarmInUse">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FaultTolerance -->
+
+    <owl:Class rdf:about="&sw-quality;FaultTolerance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FlexibilityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;FlexibilityInUse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;FlexibilityInUse"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FlexibilityInUseCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;FlexibilityInUseCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalAppropriateness -->
+
+    <owl:Class rdf:about="&sw-quality;FunctionalAppropriateness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalCompleteness -->
+
+    <owl:Class rdf:about="&sw-quality;FunctionalCompleteness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalCorrectness -->
+
+    <owl:Class rdf:about="&sw-quality;FunctionalCorrectness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalSuitability -->
+
+    <owl:Class rdf:about="&sw-quality;FunctionalSuitability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Helpfulness -->
+
+    <owl:Class rdf:about="&sw-quality;Helpfulness">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Installability -->
+
+    <owl:Class rdf:about="&sw-quality;Installability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Transferability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Integrity -->
+
+    <owl:Class rdf:about="&sw-quality;Integrity">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Interoperability -->
+
+    <owl:Class rdf:about="&sw-quality;Interoperability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Learnability -->
+
+    <owl:Class rdf:about="&sw-quality;Learnability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Likability -->
+
+    <owl:Class rdf:about="&sw-quality;Likability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Maintainability -->
+
+    <owl:Class rdf:about="&sw-quality;Maintainability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/MaintainabilityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;MaintainabilityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Maturity -->
+
+    <owl:Class rdf:about="&sw-quality;Maturity">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Modifiability -->
+
+    <owl:Class rdf:about="&sw-quality;Modifiability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Maintainability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ModificationStability -->
+
+    <owl:Class rdf:about="&sw-quality;ModificationStability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Modularity -->
+
+    <owl:Class rdf:about="&sw-quality;Modularity">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Non-repudiation -->
+
+    <owl:Class rdf:about="&sw-quality;Non-repudiation">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Operability -->
+
+    <owl:Class rdf:about="&sw-quality;Operability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/OperabilityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;OperabilityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/OperatorHealthAndSafety -->
+
+    <owl:Class rdf:about="&sw-quality;OperatorHealthAndSafety">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PerformanceEfficiency -->
+
+    <owl:Class rdf:about="&sw-quality;PerformanceEfficiency">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PerformanceEfficiencyCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;PerformanceEfficiencyCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Pleasure -->
+
+    <owl:Class rdf:about="&sw-quality;Pleasure">
+        <rdfs:subClassOf rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Portability -->
+
+    <owl:Class rdf:about="&sw-quality;Portability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Transferability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PublicHealthAndSafety -->
+
+    <owl:Class rdf:about="&sw-quality;PublicHealthAndSafety">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/QualityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;QualityInUse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Recoverability -->
+
+    <owl:Class rdf:about="&sw-quality;Recoverability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Reliability -->
+
+    <owl:Class rdf:about="&sw-quality;Reliability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ReliabilityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;ReliabilityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Reliability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Replaceability -->
+
+    <owl:Class rdf:about="&sw-quality;Replaceability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ResourceUtilization -->
+
+    <owl:Class rdf:about="&sw-quality;ResourceUtilization">
+        <rdfs:subClassOf rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Reusability -->
+
+    <owl:Class rdf:about="&sw-quality;Reusability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Safety -->
+
+    <owl:Class rdf:about="&sw-quality;Safety">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SafetyCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;SafetyCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SatisfactionInUse -->
+
+    <owl:Class rdf:about="&sw-quality;SatisfactionInUse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Security -->
+
+    <owl:Class rdf:about="&sw-quality;Security">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SecurityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;SecurityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Security"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SoftwareProductQuality -->
+
+    <owl:Class rdf:about="&sw-quality;SoftwareProductQuality">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TechnicalAccessibility -->
+
+    <owl:Class rdf:about="&sw-quality;TechnicalAccessibility">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Operability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Testability -->
+
+    <owl:Class rdf:about="&sw-quality;Testability">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Compatibility"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TimeBehaviour -->
+
+    <owl:Class rdf:about="&sw-quality;TimeBehaviour">
+        <rdfs:subClassOf rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Transferability -->
+
+    <owl:Class rdf:about="&sw-quality;Transferability">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TransferabilityCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;TransferabilityCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;Transferability"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Trust -->
+
+    <owl:Class rdf:about="&sw-quality;Trust">
+        <rdfs:subClassOf rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/UsabilityInUse -->
+
+    <owl:Class rdf:about="&sw-quality;UsabilityInUse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:subClassOf rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/UsabilityInUseCompliance -->
+
+    <owl:Class rdf:about="&sw-quality;UsabilityInUseCompliance">
+        <rdfs:subClassOf rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureDescription -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureDescription">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureFramework -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureFramework">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureModel -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureModel">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureRational -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureRational">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureView -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureView">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ArchitectureViewpoint -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ArchitectureViewpoint">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Concern -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;Concern">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Correspondence -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;Correspondence">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/CorrespondenceRules -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;CorrespondenceRules">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Environment -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;Environment">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ModelKind -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ModelKind">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/ObjectiveCharacteristic -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;ObjectiveCharacteristic">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/Stakeholder -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;Stakeholder">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;SubjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/SubjectiveCharacteristic -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;SubjectiveCharacteristic">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ArchitecturalAlignment/System-of-Interest -->
+
+    <owl:NamedIndividual rdf:about="&arc-alignment;System-of-Interest">
+        <rdf:type rdf:resource="https://w3id.org/squap/ArchitecturalAlignment"/>
+        <specializes rdf:resource="&arc-alignment;ObjectiveCharacteristic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&arc-alignment;System-of-Interest"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&prc-maturity;Improvement"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCompleteness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ContractingAndSkills -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ContractingAndSkills">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
+        <usesConcept rdf:resource="&prc-maturity;Improvement"/>
+        <usesConcept rdf:resource="&prc-maturity;Infrastructure"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&prc-maturity;Training"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/CustomSoftwareQuality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/CustomSoftwareQuality">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
+        <usesConcept rdf:resource="&prc-maturity;Verification"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalAppropriateness"/>
+        <usesConcept rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;Environment"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&prc-maturity;Training"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DocumentationStandardsAndTools -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureRational"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Learnability"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+        <usesConcept rdf:resource="&sw-quality;Testability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+        <usesConcept rdf:resource="&sw-quality;Testability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&sw-quality;Accountability"/>
+        <usesConcept rdf:resource="&sw-quality;Integrity"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
+        <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Installability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/LackingToolsAndMethodologies -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/LackingToolsAndMethodologies">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;Modularity"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+        <usesConcept rdf:resource="&sw-quality;Testability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&prc-maturity;Training"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&prc-maturity;Audit"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&prc-maturity;Validation"/>
+        <usesConcept rdf:resource="&prc-maturity;Verification"/>
+        <usesConcept rdf:resource="&sw-quality;Accountability"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+        <usesConcept rdf:resource="&sw-quality;Integrity"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+        <usesConcept rdf:resource="&sw-quality;Non-repudiation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/ModuleInterfacesComplexity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ModuleInterfacesComplexity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureRational"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&arc-alignment;System-of-Interest"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&sw-quality;Modularity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&prc-maturity;ConfigurationManagement"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;ProblemResolution"/>
+        <usesConcept rdf:resource="&prc-maturity;Verification"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Operability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&prc-maturity;Supply"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Installability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Environment"/>
+        <usesConcept rdf:resource="&arc-alignment;System-of-Interest"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/PackagesVsDocumentation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureViewpoint"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&sw-quality;Adaptability"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Installability"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;Modularity"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+        <usesConcept rdf:resource="&sw-quality;Reusability"/>
+        <usesConcept rdf:resource="&sw-quality;Testability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsRequirements -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureViewpoint"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCompleteness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsSystemAnalysis -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsSystemAnalysis">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&prc-maturity;QualityAssurance"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalAppropriateness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCompleteness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+        <usesConcept rdf:resource="&sw-quality;Replaceability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/QualityVsTimeAndBudget -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsTimeAndBudget">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Concern"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&prc-maturity;Maintenance"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&sw-quality;Analysability"/>
+        <usesConcept rdf:resource="&sw-quality;Co-existence"/>
+        <usesConcept rdf:resource="&sw-quality;Interoperability"/>
+        <usesConcept rdf:resource="&sw-quality;Modifiability"/>
+        <usesConcept rdf:resource="&sw-quality;ResourceUtilization"/>
+        <usesConcept rdf:resource="&sw-quality;Testability"/>
+        <usesConcept rdf:resource="&sw-quality;TimeBehaviour"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/RequirementsVsMethodologies -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/RequirementsVsMethodologies">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCompleteness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&prc-maturity;Management"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
+        <usesConcept rdf:resource="&prc-maturity;Documentation"/>
+        <usesConcept rdf:resource="&sw-quality;Accountability"/>
+        <usesConcept rdf:resource="&sw-quality;FaultTolerance"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalAppropriateness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCompleteness"/>
+        <usesConcept rdf:resource="&sw-quality;FunctionalCorrectness"/>
+        <usesConcept rdf:resource="&sw-quality;Integrity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+        <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
+        <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
+        <usesConcept rdf:resource="&arc-alignment;Environment"/>
+        <usesConcept rdf:resource="&prc-maturity;Development"/>
+        <usesConcept rdf:resource="&sw-quality;Maturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Acquisition -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Acquisition">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Primary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Audit -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Audit">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/ConfigurationManagement -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;ConfigurationManagement">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Development -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Development">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Primary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Documentation -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Documentation">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Improvement -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Improvement">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Organisational"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Infrastructure -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Infrastructure">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Organisational"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/JointReview -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;JointReview">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Maintenance -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Maintenance">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Primary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Management -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Management">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Organisational"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Operation -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Operation">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Primary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Organisational -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Organisational">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Primary -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Primary">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/ProblemResolution -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;ProblemResolution">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/QualityAssurance -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;QualityAssurance">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Supply -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Supply">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Primary"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Supporting -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Supporting">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Training -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Training">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Organisational"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Validation -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Validation">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/ProcessMaturity/Verification -->
+
+    <owl:NamedIndividual rdf:about="&prc-maturity;Verification">
+        <rdf:type rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
+        <specializes rdf:resource="&prc-maturity;Supporting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/AccessibilityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;AccessibilityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Accountability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Accountability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Accuracy -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Accuracy">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Adaptability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Adaptability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Transferability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Analysability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Analysability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Appropriateness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Appropriateness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/AppropriatenessRecognisability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;AppropriatenessRecognisability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Attractiveness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Attractiveness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Authenticity -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Authenticity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Availability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Availability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Reliability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Changeability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Changeability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Co-existence -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Co-existence">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Comfort -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Comfort">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/CommercialDamageInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;CommercialDamageInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Safety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Compatibility -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Compatibility">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/CompatibilityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;CompatibilityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Confidentiality -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Confidentiality">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ContextConformityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;ContextConformityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ContextExtendibilityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;ContextExtendibilityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EaseOfUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;EaseOfUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EffectivenessInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;EffectivenessInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EfficiencyInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;EfficiencyInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/EnvironmentalHarmInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;EnvironmentalHarmInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Safety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FaultTolerance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FaultTolerance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Reliability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FlexibilityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FlexibilityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FlexibilityInUse"/>
+        <specializes rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FlexibilityInUseCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FlexibilityInUseCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FlexibilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalAppropriateness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FunctionalAppropriateness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalCompleteness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FunctionalCompleteness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalCorrectness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FunctionalCorrectness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;FunctionalSuitability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/FunctionalSuitability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;FunctionalSuitability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Helpfulness -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Helpfulness">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Installability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Installability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Transferability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Integrity -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Integrity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Interoperability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Interoperability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Learnability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Learnability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Likability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Likability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Maintainability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Maintainability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/MaintainabilityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;MaintainabilityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Maturity -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Maturity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Reliability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Modifiability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Modifiability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Maintainability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ModificationStability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;ModificationStability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Modularity -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Modularity">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Non-repudiation -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Non-repudiation">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Operability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Operability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/OperabilityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;OperabilityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/OperatorHealthAndSafety -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;OperatorHealthAndSafety">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Safety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PerformanceEfficiency -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;PerformanceEfficiency">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PerformanceEfficiencyCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;PerformanceEfficiencyCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Pleasure -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Pleasure">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Portability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Portability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Transferability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/PublicHealthAndSafety -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;PublicHealthAndSafety">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Safety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/QualityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;QualityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Recoverability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Recoverability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Reliability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Reliability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Reliability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ReliabilityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;ReliabilityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Reliability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Replaceability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Replaceability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/ResourceUtilization -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;ResourceUtilization">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Reusability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Reusability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Safety -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Safety">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SafetyCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;SafetyCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Safety"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SatisfactionInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;SatisfactionInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Security -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Security">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SecurityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;SecurityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Security"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/SoftwareProductQuality -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;SoftwareProductQuality">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TechnicalAccessibility -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;TechnicalAccessibility">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Operability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Testability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Testability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Compatibility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TimeBehaviour -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;TimeBehaviour">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;PerformanceEfficiency"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Transferability -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Transferability">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SoftwareProductQuality"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/TransferabilityCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;TransferabilityCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;Transferability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/Trust -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;Trust">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;SatisfactionInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/UsabilityInUse -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;UsabilityInUse">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;QualityInUse"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/squap/SoftwareQuality/UsabilityInUseCompliance -->
+
+    <owl:NamedIndividual rdf:about="&sw-quality;UsabilityInUseCompliance">
+        <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <specializes rdf:resource="&sw-quality;UsabilityInUse"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
