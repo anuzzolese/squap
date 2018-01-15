@@ -25,9 +25,34 @@
      xmlns:squap="https://w3id.org/squap/">
     <owl:Ontology rdf:about="&squap;squap-dul/">
         <rdfs:label xml:lang="en">SQuAP to DOLCE+DnS UltraLight</rdfs:label>
+        <dc:description xml:lang="en">#Mappings between DOLCE+DnS UltraLight and SQuAP.
+
+## Class mappings
+
+| SQuAP class  | Align. axiom        | DOLCE class    |
+| ------------ |:------------------: | -------------- |	
+| :Region      | owl:equivalentClass | dul:Region     |
+| :Value       | owl:subClassOf      | dul:Amount     |
+| :Parameter   |owl:equivalentClass  | dul:Parameter  |
+| :Concept     |owl:equivalentClass  | dul:Concept    |
+| :Situation   |owl:equivalentClass  | dul:Situation  |
+
+
+## Property mappings
+| SQuAP prop.  | Align. axiom        | DOLCE prop.    |
+| ------------ | :------------------: | -------------- |	
+| :classifies | owl:equivalentProperty | dul:classifies |
+| :isClassifiedBy | owl:equivalentProperty | dul:isClassifiedBy |
+| :usesConcept | owl:equivalentProperty | dul:usesConcept |
+| :isConceptUsedIn | owl:equivalentProperty | dul:isConceptUsedIn |
+| :satisfies | owl:equivalentProperty | dul:satisfies |
+| :isSatisfied | owl:equivalentProperty | dul:isSatisfied |
+| :specializes | owl:equivalentProperty | dul:specializes |
+| :isSpecializedBy | owl:equivalentProperty | dul:isSpecializedBy |
+| :isSettingFor | owl:equivalentProperty | dul:isSettingFor |
+| :value | owl:subPropertyOf | dul:hasRegionDataValue |</dc:description>
         <dc:creator xml:lang="en">Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
         <dc:creator xml:lang="en">Daniel Russo (DISI, University of Bologna)</dc:creator>
-        <dc:description xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</dc:description>
         <rdfs:comment xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</rdfs:comment>
         <dc:description xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.
 
