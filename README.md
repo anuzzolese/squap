@@ -1,4 +1,4 @@
 # squap
 
-![GitHub Logo](/images/squap-ont.png)
+![GitHub Logo](/ont/images/squap-ont.png)
 Format: ![Alt Text](url)
