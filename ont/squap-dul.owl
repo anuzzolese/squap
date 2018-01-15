@@ -28,7 +28,8 @@
         <dc:creator xml:lang="en">Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
         <dc:creator xml:lang="en">Daniel Russo (DISI, University of Bologna)</dc:creator>
         <dc:description xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</dc:description>
-        <rdfs:comment xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.
+        <rdfs:comment xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</rdfs:comment>
+        <dc:description xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.
 
 ## Class mappings
 | SQuAP class     |  Align. axiom        | DOLCE class    |
@@ -51,7 +52,7 @@
 | :specializes | owl:equivalentProperty | dul:specializes |
 | :isSpecializedBy | owl:equivalentProperty | dul:isSpecializedBy |
 | :isSettingFor | owl:equivalentProperty | dul:isSettingFor |
-| :value | owl:subPropertyOf | dul:hasRegionDataValue |</rdfs:comment>
+| :value | owl:subPropertyOf | dul:hasRegionDataValue |</dc:description>
         <dc:creator xml:lang="en">Paolo Ciancarini (DISI, University of Bologna)</dc:creator>
         <dc:creator xml:lang="en">Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
         <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
