@@ -23,7 +23,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:factor="https://w3id.org/squap/SoftwareSystemQualityFactor/"
      xmlns:prc-maturity="https://w3id.org/squap/ProcessMaturity/">
-    <owl:Ontology rdf:about="https://w3id.org/squap/"/>
+    <owl:Ontology rdf:about="https://w3id.org/squap/">
+        <rdfs:label xml:lang="en">SQuAP Ontology</rdfs:label>
+        <rdfs:comment xml:lang="en">Quality, architecture, and process are considered the keystones of software engineering. ISO defines them in three separate standards. However, their interaction has been poorly studied, so far. The SQuAP model (Software Quality, Architecture, Process) describes twenty-eight main factors that impact on software quality in banking systems, and each factor is described as a relation among some characteristics from the three ISO standards. Hence, SQuAP makes such relations emerge rigorously, although informally. SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.</rdfs:comment>
+    </owl:Ontology>
     
 
 
@@ -355,14 +358,14 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/satisfies"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/MeasurementResult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/isAffectedBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/satisfies"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -374,15 +377,15 @@
     <owl:Class rdf:about="https://w3id.org/squap/MeasurementResult">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/assesses"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/hasValue"/>
+                <owl:onClass rdf:resource="https://w3id.org/squap/Value"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/hasValue"/>
-                <owl:onClass rdf:resource="https://w3id.org/squap/Value"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/assesses"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
