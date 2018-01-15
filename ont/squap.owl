@@ -2,13 +2,14 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY prc-maturity "https://w3id.org/squap/ProcessMaturity/" >
-    <!ENTITY opla "http://ontologydesignpatterns.org/opla/" >
     <!ENTITY sw-quality "https://w3id.org/squap/SoftwareQuality/" >
+    <!ENTITY opla "http://ontologydesignpatterns.org/opla/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY arc-alignment "https://w3id.org/squap/ArchitecturalAlignment/" >
     <!ENTITY factor "https://w3id.org/squap/SoftwareSystemQualityFactor/" >
@@ -17,15 +18,16 @@
 
 <rdf:RDF xmlns="https://w3id.org/squap/"
      xml:base="https://w3id.org/squap/"
-     xmlns:arc-alignment="https://w3id.org/squap/ArchitecturalAlignment/"
      xmlns:opla="http://ontologydesignpatterns.org/opla/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:sw-quality="https://w3id.org/squap/SoftwareQuality/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:factor="https://w3id.org/squap/SoftwareSystemQualityFactor/"
      xmlns:prc-maturity="https://w3id.org/squap/ProcessMaturity/"
+     xmlns:arc-alignment="https://w3id.org/squap/ArchitecturalAlignment/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:factor="https://w3id.org/squap/SoftwareSystemQualityFactor/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://w3id.org/squap/">
         <rdfs:label xml:lang="en">SQuAP Ontology</rdfs:label>
@@ -37,6 +39,7 @@
         <dc:creator xml:lang="en">Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
+        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dc:description rdf:resource="https://raw.githubusercontent.com/anuzzolese/squap/master/ont/images/squap-ont.png"/>
         <owl:versionIRI rdf:resource="https://w3id.org/squap/0.1"/>
     </owl:Ontology>
@@ -75,6 +78,12 @@
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="&dcterms;license"/>
     
 
 
