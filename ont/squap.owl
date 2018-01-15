@@ -31,7 +31,6 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://w3id.org/squap/">
         <rdfs:label xml:lang="en">SQuAP Ontology</rdfs:label>
-        <dc:description>&lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;&lt;img alt=&quot;Creative Commons License&quot; style=&quot;border-width:0&quot; src=&quot;https://i.creativecommons.org/l/by/4.0/88x31.png&quot; /&gt;&lt;/a&gt;&lt;br /&gt;This work is licensed under a &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by/4.0/&quot;&gt;Creative Commons Attribution 4.0 International License&lt;/a&gt;.</dc:description>
         <dc:creator xml:lang="en">Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
         <dc:creator xml:lang="en">Daniel Russo (DISI, University of Bologna)</dc:creator>
         <dc:creator xml:lang="en">Paolo Ciancarini (DISI, University of Bologna)</dc:creator>
@@ -41,6 +40,7 @@
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dc:description rdf:resource="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         <dc:description rdf:resource="https://raw.githubusercontent.com/anuzzolese/squap/master/ont/images/squap-ont.png"/>
         <owl:versionIRI rdf:resource="https://w3id.org/squap/0.1"/>
     </owl:Ontology>
