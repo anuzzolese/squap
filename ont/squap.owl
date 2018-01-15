@@ -39,7 +39,7 @@
         <dc:creator xml:lang="en">Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
-        <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dc:rights rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dc:description rdf:resource="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
         <dc:description rdf:resource="https://raw.githubusercontent.com/anuzzolese/squap/master/ont/images/squap-ont.png"/>
         <owl:versionIRI rdf:resource="https://w3id.org/squap/0.1"/>
@@ -79,6 +79,12 @@
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="&dc;description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="&dc;rights"/>
     
 
 
