@@ -3,7 +3,9 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY squap "https://w3id.org/squap/" >
+    <!ENTITY terms "http://purl.org/dc/terms/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
@@ -14,15 +16,52 @@
 <rdf:RDF xmlns="&squap;squap-dul.owl#"
      xml:base="&squap;squap-dul.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:squap="https://w3id.org/squap/">
-    <owl:Ontology rdf:about="&squap;squap-dul.owl">
+    <owl:Ontology rdf:about="&squap;squap-dul/">
+        <rdfs:label xml:lang="en">SQuAP to DOLCE+DnS UltraLight</rdfs:label>
+        <dc:creator xml:lang="en">Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
+        <dc:creator xml:lang="en">Daniel Russo (DISI, University of Bologna)</dc:creator>
+        <dc:description xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</dc:description>
+        <rdfs:comment xml:lang="en">Mappings between DOLCE+DnS UltraLight and SQuAP.</rdfs:comment>
+        <dc:creator xml:lang="en">Paolo Ciancarini (DISI, University of Bologna)</dc:creator>
+        <dc:creator xml:lang="en">Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
         <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <dc:rights rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <owl:imports rdf:resource="https://w3id.org/squap/"/>
+        <owl:versionIRI rdf:resource="&squap;squap-dul/0.1"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegionDataValue -->
+
+    <owl:AnnotationProperty rdf:about="&dul;hasRegionDataValue"/>
+    
+
+
+    <!-- https://w3id.org/squap/amount -->
+
+    <owl:AnnotationProperty rdf:about="&squap;amount">
+        <rdfs:subPropertyOf rdf:resource="&dul;hasRegionDataValue"/>
+    </owl:AnnotationProperty>
     
 
 
@@ -41,14 +80,6 @@
 
     <rdf:Description rdf:about="&dul;classifies">
         <owl:equivalentProperty rdf:resource="&squap;classifies"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasSetting -->
-
-    <rdf:Description rdf:about="&dul;hasSetting">
-        <owl:equivalentProperty rdf:resource="&squap;hasSetting"/>
     </rdf:Description>
     
 
@@ -116,12 +147,6 @@
     
 
 
-    <!-- https://w3id.org/squap/hasSetting -->
-
-    <rdf:Description rdf:about="&squap;hasSetting"/>
-    
-
-
     <!-- https://w3id.org/squap/isClassifiedBy -->
 
     <rdf:Description rdf:about="&squap;isClassifiedBy"/>
@@ -161,25 +186,6 @@
     <!-- https://w3id.org/squap/usesConcept -->
 
     <rdf:Description rdf:about="&squap;usesConcept"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/squap/amount -->
-
-    <rdf:Description rdf:about="&squap;amount">
-        <rdfs:subPropertyOf rdf:resource="&dul;hasRegionDataValue"/>
-    </rdf:Description>
     
 
 
@@ -260,13 +266,13 @@
 
     <!-- https://w3id.org/squap/Amount -->
 
-    <rdf:Description rdf:about="&squap;Amount"/>
+    <owl:Class rdf:about="&squap;Amount"/>
     
 
 
     <!-- https://w3id.org/squap/Characteristic -->
 
-    <rdf:Description rdf:about="&squap;Characteristic">
+    <owl:Class rdf:about="&squap;Characteristic">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -276,7 +282,7 @@
                 </owl:unionOf>
             </owl:Class>
         </owl:equivalentClass>
-    </rdf:Description>
+    </owl:Class>
     
 
 
@@ -294,7 +300,7 @@
 
     <!-- https://w3id.org/squap/Entity -->
 
-    <rdf:Description rdf:about="&squap;Entity"/>
+    <owl:Class rdf:about="&squap;Entity"/>
     
 
 
@@ -318,7 +324,7 @@
 
     <!-- https://w3id.org/squap/UnitOfMeasure -->
 
-    <rdf:Description rdf:about="&squap;UnitOfMeasure"/>
+    <owl:Class rdf:about="&squap;UnitOfMeasure"/>
 </rdf:RDF>
 
 
