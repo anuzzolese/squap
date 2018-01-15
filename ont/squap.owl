@@ -423,6 +423,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:comment xml:lang="en">The software quality characteristic meant as architectural alignment.</rdfs:comment>
     </owl:Class>
     
 
@@ -442,6 +443,8 @@
         <rdfs:label>Concept</rdfs:label>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Description"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
+        <rdfs:comment xml:lang="en">A concept. 
+Once defined, a Concept can be used in other descriptions.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
     
@@ -452,6 +455,7 @@
     <owl:Class rdf:about="https://w3id.org/squap/Description">
         <rdfs:label>Description</rdfs:label>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
+        <rdfs:comment xml:lang="en">A Description represents a conceptualization. It can be thought also as a &apos;descriptive context&apos; that defines concepts in order to see a &apos;relational context&apos; out of a set of data or observations.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
     
@@ -502,6 +506,7 @@
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A measurement result.</rdfs:comment>
     </owl:Class>
     
 
@@ -510,6 +515,7 @@
 
     <owl:Class rdf:about="https://w3id.org/squap/Metric">
         <rdfs:label>Metric</rdfs:label>
+        <rdfs:comment xml:lang="en">A metric, e.g. precision.</rdfs:comment>
     </owl:Class>
     
 
@@ -518,6 +524,10 @@
 
     <owl:Class rdf:about="https://w3id.org/squap/Parameter">
         <rdfs:label>Parameter</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:comment xml:lang="en">A Concept that classifies something having a certain value, e.g. &apos;High&apos; can be said of people taller than 185 cm.
+However, in order to formally represent this constraint, we need to add an anonymous type to a parameter instance, using a property that convey the semantics of the parameter, e.g.:
+High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) and (oneOf hasUnitOfMeasure centimeter)))</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
     </owl:Class>
     
@@ -529,6 +539,7 @@
         <rdfs:label>Process maturity</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
+        <rdfs:comment xml:lang="en">The software quality characteristic meant as process maturity.</rdfs:comment>
     </owl:Class>
     
 
@@ -546,6 +557,7 @@
 
     <owl:Class rdf:about="https://w3id.org/squap/Region">
         <rdfs:label>Region</rdfs:label>
+        <rdfs:comment xml:lang="en">Any region in a dimensional space (a dimensional space is a maximal Region), which can be used as a value for a quality of an Entity.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
     </owl:Class>
     
@@ -555,6 +567,7 @@
 
     <owl:Class rdf:about="https://w3id.org/squap/Situation">
         <rdfs:label>Situation</rdfs:label>
+        <rdfs:comment xml:lang="en">A view on a set of entities. It can be seen as a &apos;relational context&apos;, reifying a relation.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
     
@@ -565,6 +578,7 @@
     <owl:Class rdf:about="https://w3id.org/squap/SoftwareQuality">
         <rdfs:label>Software quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+        <rdfs:comment xml:lang="en">The software quality characteristic meant as softwarea quality.</rdfs:comment>
     </owl:Class>
     
 
@@ -583,6 +597,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Concept"/>
+        <rdfs:comment xml:lang="en">The concept of the sotftware quality characteristic</rdfs:comment>
     </owl:Class>
     
 
