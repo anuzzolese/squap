@@ -160,6 +160,17 @@
     
 
 
+    <!-- https://w3id.org/squap/hasParameter -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/hasParameter">
+        <rdfs:label xml:lang="en">has parameter</rdfs:label>
+        <rdfs:comment xml:lang="en">The relation between a metric and a parameter.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Metric"/>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Parameter"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/squap/hasValue -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/squap/hasValue">
@@ -249,6 +260,18 @@
         <rdfs:range rdf:resource="https://w3id.org/squap/MeasurementResult"/>
         <rdfs:domain rdf:resource="https://w3id.org/squap/Metric"/>
         <owl:inverseOf rdf:resource="https://w3id.org/squap/basedOnMetric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/squap/isParameterOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/squap/isParameterOf">
+        <rdfs:label xml:lang="en">is parameter of</rdfs:label>
+        <rdfs:comment xml:lang="en">The relation between a parameter and a metric.</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/squap/Metric"/>
+        <rdfs:domain rdf:resource="https://w3id.org/squap/Parameter"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/squap/hasParameter"/>
     </owl:ObjectProperty>
     
 
@@ -3153,11 +3176,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Operation">
         <rdfs:label>Operation</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&prc-maturity;Supply">
-        <rdfs:label>Supply</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;TimeBehaviour">
         <rdfs:label>Time behaviour</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&prc-maturity;Supply">
+        <rdfs:label>Supply</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Compatibility">
         <rdfs:label>Compatibility</rdfs:label>
@@ -3216,25 +3239,25 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
         <rdfs:label>Establishment of internal and external development processes</rdfs:label>
         <rdfs:comment xml:lang="en">Merging internal and external development processes is extremely difficult.</rdfs:comment>
     </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;CompatibilityCompliance">
+        <rdfs:label>Compatibility compliance</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
         <rdfs:label>Developer professionalism vs skills</rdfs:label>
         <rdfs:comment xml:lang="en">No adequate resources to invest in education and to train developers, especially those with no formal education in IT.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;CompatibilityCompliance">
-        <rdfs:label>Compatibility compliance</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
         <rdfs:label>Requirements vs technical jargon</rdfs:label>
         <rdfs:comment xml:lang="en">The (mis-)use of technical jargon of different departments for requirement elicitation leads to low software quality.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Portability">
-        <rdfs:label>Portability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureRational">
         <rdfs:label>Architecture rational</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Management">
         <rdfs:label>Management</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Portability">
+        <rdfs:label>Portability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureModel">
         <rdfs:label>Architecture model</rdfs:label>
@@ -3248,11 +3271,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Maturity">
         <rdfs:label>Maturity</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;TechnicalAccessibility">
-        <rdfs:label>Technical accessibility</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;OperabilityCompliance">
         <rdfs:label>Operability compliance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;TechnicalAccessibility">
+        <rdfs:label>Technical accessibility</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;TransferabilityCompliance">
         <rdfs:label>Transferability compliance</rdfs:label>
@@ -3288,11 +3311,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Supporting">
         <rdfs:label>Supporting</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;QualityInUse">
-        <rdfs:label>Quality in use</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Maintenance">
         <rdfs:label>Maintenance</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;QualityInUse">
+        <rdfs:label>Quality in use</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Recoverability">
         <rdfs:label>Recoverability</rdfs:label>
@@ -3326,17 +3349,17 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Testability">
         <rdfs:label>Testability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Installability">
-        <rdfs:label>Installability</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;SecurityCompliance">
         <rdfs:label>Security compliance</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Authenticity">
-        <rdfs:label>Authenticity</rdfs:label>
+    <rdf:Description rdf:about="&sw-quality;Installability">
+        <rdfs:label>Installability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;JointReview">
         <rdfs:label>Joint review</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Authenticity">
+        <rdfs:label>Authenticity</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureDescription">
         <rdfs:label>Architecture description</rdfs:label>
@@ -3361,11 +3384,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
         <rdfs:label>Developer professionalism vs rates</rdfs:label>
         <rdfs:comment xml:lang="en">Decreasing developer&apos;s professionalism and the decrease of professional rates appears to be quite connected.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;UsabilityInUseCompliance">
-        <rdfs:label>Usability in use compliance</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureView">
         <rdfs:label>Architecture view</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;UsabilityInUseCompliance">
+        <rdfs:label>Usability in use compliance</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;Concern">
         <rdfs:label>Concern</rdfs:label>
@@ -3404,11 +3427,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;PerformanceEfficiency">
         <rdfs:label>Performance efficiency</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Attractiveness">
-        <rdfs:label>Attractiveness</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Documentation">
         <rdfs:label>Documentation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Attractiveness">
+        <rdfs:label>Attractiveness</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Transferability">
         <rdfs:label>Transferability</rdfs:label>
@@ -3419,11 +3442,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&arc-alignment;Correspondence">
         <rdfs:label>Correspondence</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&arc-alignment;Stakeholder">
-        <rdfs:label>Stakeholder</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Validation">
         <rdfs:label>Validation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&arc-alignment;Stakeholder">
+        <rdfs:label>Stakeholder</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Infrastructure">
         <rdfs:label>Infrastructure</rdfs:label>
@@ -3434,12 +3457,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Primary">
         <rdfs:label>Primary</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&prc-maturity;Improvement">
-        <rdfs:label>Improvement</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
         <rdfs:label>Documentation standards and tools</rdfs:label>
         <rdfs:comment xml:lang="en">Poor documentation hinders software maintainability and increases evolution costs.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&prc-maturity;Improvement">
+        <rdfs:label>Improvement</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Training">
         <rdfs:label>Training</rdfs:label>
@@ -3451,12 +3474,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
         <rdfs:label>Quality vs system analysis</rdfs:label>
         <rdfs:comment xml:lang="en">Even though the design phase is perceived as the most important up-front activity, it is poorly implemented.</rdfs:comment>
     </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;FunctionalCorrectness">
+        <rdfs:label>Functional correctness</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
         <rdfs:label>Documentation vs time and budget</rdfs:label>
         <rdfs:comment xml:lang="en">Time and budget constraints have a direct impact on software documentation. Due to low budget for new developments and urgency for new applications, documentation is the first element which is skipped.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;FunctionalCorrectness">
-        <rdfs:label>Functional correctness</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
         <rdfs:label>Functional analysis vs data modeling</rdfs:label>
@@ -3488,12 +3511,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Appropriateness">
         <rdfs:label>Appropriateness</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Reliability">
+        <rdfs:label>Reliability</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
         <rdfs:label>Quality vs requirements</rdfs:label>
         <rdfs:comment xml:lang="en">Poorly defined requirements lead to misunderstandings with software developers, which will deliver lower quality software. The functional quality will be low if the requirements&apos; clarity is low.</rdfs:comment>
-    </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Reliability">
-        <rdfs:label>Reliability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;ResourceUtilization">
         <rdfs:label>Resource utilization</rdfs:label>
@@ -3508,21 +3531,21 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Audit">
         <rdfs:label>Audit</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Helpfulness">
+        <rdfs:label>Helpfulness</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
         <rdfs:label>Application and maintenance contracts vs documentation</rdfs:label>
         <rdfs:comment xml:lang="en">Application &amp; Maintenance (AM) contracts are set to outsource the development and maintenance, to decrease internal costs.Typically, they do not provide an adequate documentation.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Helpfulness">
-        <rdfs:label>Helpfulness</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Non-repudiation">
         <rdfs:label>Non-repudiation</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;EnvironmentalHarmInUse">
-        <rdfs:label>Environmental harm in use</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Accountability">
         <rdfs:label>Accountability</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;EnvironmentalHarmInUse">
+        <rdfs:label>Environmental harm in use</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
         <rdfs:label>Packages documentation vs system analysis</rdfs:label>
@@ -3567,11 +3590,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&arc-alignment;ArchitectureFramework">
         <rdfs:label>Architecture framework</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;ModificationStability">
-        <rdfs:label>Modification stability</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Acquisition">
         <rdfs:label>Acquisition</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;ModificationStability">
+        <rdfs:label>Modification stability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;System-of-Interest">
         <rdfs:label>System-of-Interest</rdfs:label>
