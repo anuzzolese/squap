@@ -262,28 +262,28 @@
         <squap:usesConcept rdf:resource="&squap;ProcessMaturity/Documentation"/>
         <squap:usesConcept rdf:resource="&squap;SoftwareQuality/Compatibility"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdfcompatibility-assessment"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdfcorrespondence-assessment"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdfdocumentation-assessment"/>
+        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#compatibility-assessment"/>
+        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#correspondence-assessment"/>
+        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#documentation-assessment"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfcompatibility-assessment -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#compatibility-assessment -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfcompatibility-assessment">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#compatibility-assessment">
         <rdf:type rdf:resource="&squap;SoftwareQualityAssessment"/>
         <squap:assesses rdf:resource="&squap;SoftwareQuality/Compatibility"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdfcompatibility-grade"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdfsonarqube-measure"/>
+        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#compatibility-grade"/>
+        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#sonarqube-measure"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfcompatibility-grade -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#compatibility-grade -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfcompatibility-grade">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#compatibility-grade">
         <rdf:type rdf:resource="&squap;Grade"/>
         <squap:grade rdf:datatype="&xsd;string">B</squap:grade>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
@@ -291,62 +291,62 @@
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfcorrespondence-assessment -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#correspondence-assessment -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfcorrespondence-assessment">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#correspondence-assessment">
         <rdf:type rdf:resource="&squap;ArchitecturalAlignmentAssessment"/>
         <squap:assesses rdf:resource="&squap;ArchitecturalAlignment/Correspondence"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdfcorrespondence-grade"/>
+        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#correspondence-grade"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfcorrespondence-grade -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#correspondence-grade -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfcorrespondence-grade">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#correspondence-grade">
         <rdf:type rdf:resource="&squap;Grade"/>
         <squap:grade rdf:datatype="&xsd;int">7</squap:grade>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdflikert-scale-1-7"/>
+        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#likert-scale-1-7"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfdocumentation-assessment -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#documentation-assessment -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfdocumentation-assessment">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#documentation-assessment">
         <rdf:type rdf:resource="&squap;ProcessMaturityAssessment"/>
         <squap:assesses rdf:resource="&squap;ProcessMaturity/Documentation"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdfdocumentation-grade"/>
+        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#documentation-grade"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfdocumentation-grade -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#documentation-grade -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfdocumentation-grade">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#documentation-grade">
         <rdf:type rdf:resource="&squap;Grade"/>
         <squap:grade rdf:datatype="&xsd;int">6</squap:grade>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdflikert-scale-1-7"/>
+        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#likert-scale-1-7"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdflikert-scale-1-7 -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#likert-scale-1-7 -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdflikert-scale-1-7">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#likert-scale-1-7">
         <rdf:type rdf:resource="&squap;UnitOfMeasure"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdfsonarqube-measure -->
+    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#sonarqube-measure -->
 
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdfsonarqube-measure">
+    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#sonarqube-measure">
         <rdf:type rdf:resource="&squap;UnitOfMeasure"/>
         <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
     </owl:NamedIndividual>
