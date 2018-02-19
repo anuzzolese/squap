@@ -2,7 +2,8 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY factor "https://w3id.org/squap/Factor/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -12,7 +13,6 @@
     <!ENTITY opla "http://ontologydesignpatterns.org/opla/" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY arc-alignment "https://w3id.org/squap/ArchitecturalAlignment/" >
-    <!ENTITY factor "https://w3id.org/squap/SoftwareSystemQualityFactor/" >
 ]>
 
 
@@ -26,17 +26,17 @@
      xmlns:prc-maturity="https://w3id.org/squap/ProcessMaturity/"
      xmlns:arc-alignment="https://w3id.org/squap/ArchitecturalAlignment/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     xmlns:factor="https://w3id.org/squap/SoftwareSystemQualityFactor/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:factor="https://w3id.org/squap/Factor/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="https://w3id.org/squap/">
-        <rdfs:label xml:lang="en">SQuAP Ontology</rdfs:label>
-        <dc:creator xml:lang="en">Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
-        <dc:creator xml:lang="en">Daniel Russo (DISI, University of Bologna)</dc:creator>
-        <dc:creator xml:lang="en">Paolo Ciancarini (DISI, University of Bologna)</dc:creator>
-        <rdfs:comment xml:lang="en">Quality, architecture, and process are considered the keystones of software engineering. ISO defines them in three separate standards. However, their interaction has been poorly studied, so far. The SQuAP model (Software Quality, Architecture, Process) describes twenty-eight main factors that impact on software quality in banking systems, and each factor is described as a relation among some characteristics from the three ISO standards. Hence, SQuAP makes such relations emerge rigorously, although informally. SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.</rdfs:comment>
-        <dc:description xml:lang="en">Quality, architecture, and process are considered the keystones of software engineering. ISO defines them in three separate standards. However, their interaction has been poorly studied, so far. The SQuAP model (Software Quality, Architecture, Process) describes twenty-eight main factors that impact on software quality in banking systems, and each factor is described as a relation among some characteristics from the three ISO standards. Hence, SQuAP makes such relations emerge rigorously, although informally. SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.</dc:description>
-        <dc:creator xml:lang="en">Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
+        <rdfs:label>SQuAP Ontology</rdfs:label>
+        <dc:creator>Daniel Russo (DISI, University of Bologna)</dc:creator>
+        <rdfs:comment>Quality, architecture, and process are considered the keystones of software engineering. ISO defines them in three separate standards. However, their interaction has been poorly studied, so far. The SQuAP model (Software Quality, Architecture, Process) describes twenty-eight main factors that impact on software quality in banking systems, and each factor is described as a relation among some characteristics from the three ISO standards. Hence, SQuAP makes such relations emerge rigorously, although informally. SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.</rdfs:comment>
+        <dc:creator>Valentina Presutti (STLab, ISTC-CNR)</dc:creator>
+        <dc:creator>Andrea Giovanni Nuzzolese (STLab, ISTC-CNR)</dc:creator>
+        <dc:description>Quality, architecture, and process are considered the keystones of software engineering. ISO defines them in three separate standards. However, their interaction has been poorly studied, so far. The SQuAP model (Software Quality, Architecture, Process) describes twenty-eight main factors that impact on software quality in banking systems, and each factor is described as a relation among some characteristics from the three ISO standards. Hence, SQuAP makes such relations emerge rigorously, although informally. SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.</dc:description>
+        <dc:creator>Paolo Ciancarini (DISI, University of Bologna)</dc:creator>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
         <opla:reusesPatternAsTemplate rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
         <dc:rights rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
@@ -90,7 +90,7 @@
 
     <!-- http://purl.org/dc/terms/license -->
 
-    <owl:AnnotationProperty rdf:about="&dcterms;license"/>
+    <owl:AnnotationProperty rdf:about="&terms;license"/>
     
 
 
@@ -423,7 +423,7 @@
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/ProcessMaturity"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
-        <rdfs:comment xml:lang="en">The software quality characteristic meant as architectural alignment.</rdfs:comment>
+        <rdfs:comment>The software quality characteristic meant as architectural alignment.</rdfs:comment>
     </owl:Class>
     
 
@@ -443,7 +443,7 @@
         <rdfs:label>Concept</rdfs:label>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Description"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
-        <rdfs:comment xml:lang="en">A concept. 
+        <rdfs:comment>A concept. 
 Once defined, a Concept can be used in other descriptions.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
@@ -455,7 +455,7 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/squap/Description">
         <rdfs:label>Description</rdfs:label>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/Situation"/>
-        <rdfs:comment xml:lang="en">A Description represents a conceptualization. It can be thought also as a &apos;descriptive context&apos; that defines concepts in order to see a &apos;relational context&apos; out of a set of data or observations.</rdfs:comment>
+        <rdfs:comment>A Description represents a conceptualization. It can be thought also as a &apos;descriptive context&apos; that defines concepts in order to see a &apos;relational context&apos; out of a set of data or observations.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
     
@@ -468,14 +468,14 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Situation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/isAffectedBy"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/MeasurementResult"/>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/satisfies"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/satisfies"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/isAffectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/MeasurementResult"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -486,13 +486,6 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/squap/MeasurementResult">
         <rdfs:label>Measurement result</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/squap/hasValue"/>
-                <owl:onClass rdf:resource="https://w3id.org/squap/Value"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/squap/assesses"/>
@@ -506,7 +499,14 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A measurement result.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/squap/hasValue"/>
+                <owl:onClass rdf:resource="https://w3id.org/squap/Value"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A measurement result.</rdfs:comment>
     </owl:Class>
     
 
@@ -515,7 +515,7 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
 
     <owl:Class rdf:about="https://w3id.org/squap/Metric">
         <rdfs:label>Metric</rdfs:label>
-        <rdfs:comment xml:lang="en">A metric, e.g. precision.</rdfs:comment>
+        <rdfs:comment>A metric, e.g. precision.</rdfs:comment>
     </owl:Class>
     
 
@@ -525,7 +525,7 @@ Once defined, a Concept can be used in other descriptions.</rdfs:comment>
     <owl:Class rdf:about="https://w3id.org/squap/Parameter">
         <rdfs:label>Parameter</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Concept"/>
-        <rdfs:comment xml:lang="en">A Concept that classifies something having a certain value, e.g. &apos;High&apos; can be said of people taller than 185 cm.
+        <rdfs:comment>A Concept that classifies something having a certain value, e.g. &apos;High&apos; can be said of people taller than 185 cm.
 However, in order to formally represent this constraint, we need to add an anonymous type to a parameter instance, using a property that convey the semantics of the parameter, e.g.:
 High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) and (oneOf hasUnitOfMeasure centimeter)))</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
@@ -539,7 +539,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
         <rdfs:label>Process maturity</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
         <owl:disjointWith rdf:resource="https://w3id.org/squap/SoftwareQuality"/>
-        <rdfs:comment xml:lang="en">The software quality characteristic meant as process maturity.</rdfs:comment>
+        <rdfs:comment>The software quality characteristic meant as process maturity.</rdfs:comment>
     </owl:Class>
     
 
@@ -557,7 +557,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <owl:Class rdf:about="https://w3id.org/squap/Region">
         <rdfs:label>Region</rdfs:label>
-        <rdfs:comment xml:lang="en">Any region in a dimensional space (a dimensional space is a maximal Region), which can be used as a value for a quality of an Entity.</rdfs:comment>
+        <rdfs:comment>Any region in a dimensional space (a dimensional space is a maximal Region), which can be used as a value for a quality of an Entity.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/parameterregion.owl"/>
     </owl:Class>
     
@@ -567,7 +567,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <owl:Class rdf:about="https://w3id.org/squap/Situation">
         <rdfs:label>Situation</rdfs:label>
-        <rdfs:comment xml:lang="en">A view on a set of entities. It can be seen as a &apos;relational context&apos;, reifying a relation.</rdfs:comment>
+        <rdfs:comment>A view on a set of entities. It can be seen as a &apos;relational context&apos;, reifying a relation.</rdfs:comment>
         <opla:isNativeTo rdf:resource="http://ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
     </owl:Class>
     
@@ -578,7 +578,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <owl:Class rdf:about="https://w3id.org/squap/SoftwareQuality">
         <rdfs:label>Software quality</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
-        <rdfs:comment xml:lang="en">The software quality characteristic meant as softwarea quality.</rdfs:comment>
+        <rdfs:comment>The software quality characteristic meant as softwarea quality.</rdfs:comment>
     </owl:Class>
     
 
@@ -597,7 +597,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/Concept"/>
-        <rdfs:comment xml:lang="en">The concept of the sotftware quality characteristic</rdfs:comment>
+        <rdfs:comment>The concept of the sotftware quality characteristic</rdfs:comment>
     </owl:Class>
     
 
@@ -610,13 +610,13 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/squap/usesQualityCharacteristic"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/squap/usesQualityCharacteristic"/>
-                <owl:allValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/squap/SoftwareQualityCharacteristic"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -769,7 +769,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
+    <owl:Class rdf:about="&factor;ApplicationAndMaintenanceContractsVsDocumentation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -777,7 +777,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ContractingAndSkills -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/ContractingAndSkills">
+    <owl:Class rdf:about="&factor;ContractingAndSkills">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -785,7 +785,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/CustomSoftwareQuality -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/CustomSoftwareQuality">
+    <owl:Class rdf:about="&factor;CustomSoftwareQuality">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -793,7 +793,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis">
+    <owl:Class rdf:about="&factor;DataAnalysisVsFunctionalAnalysis">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -801,7 +801,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates">
+    <owl:Class rdf:about="&factor;DeveloperProfessionalismVsRates">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -809,7 +809,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
+    <owl:Class rdf:about="&factor;DeveloperProfessionalismVsSkills">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -817,7 +817,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DocumentationStandardsAndTools -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
+    <owl:Class rdf:about="&factor;DocumentationStandardsAndTools">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -825,7 +825,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
+    <owl:Class rdf:about="&factor;DocumentationVsTimeAndBudget">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -833,7 +833,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses">
+    <owl:Class rdf:about="&factor;EstablishmentOfInternalAndExternalDevelopmentProcesses">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -841,7 +841,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
+    <owl:Class rdf:about="&factor;FunctionalAnalysisVsDataModeling">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -849,7 +849,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts">
+    <owl:Class rdf:about="&factor;IncreaseOfMaintenanceCosts">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -857,7 +857,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity">
+    <owl:Class rdf:about="&factor;InterfacesArchitecturalComplexity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -865,7 +865,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability">
+    <owl:Class rdf:about="&factor;ItalianApplicationsVsQualityAndMaintainability">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -873,7 +873,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/LackingToolsAndMethodologies -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/LackingToolsAndMethodologies">
+    <owl:Class rdf:about="&factor;LackingToolsAndMethodologies">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -881,7 +881,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism">
+    <owl:Class rdf:about="&factor;LowerDevelopersExpertiseAndProfessionalism">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -889,7 +889,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality">
+    <owl:Class rdf:about="&factor;MeasurementOfSoftwareQuality">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -897,7 +897,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ModuleInterfacesComplexity -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/ModuleInterfacesComplexity">
+    <owl:Class rdf:about="&factor;ModuleInterfacesComplexity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -905,7 +905,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity">
+    <owl:Class rdf:about="&factor;NewPackagesFunctionalitiesVsComplexity">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -913,7 +913,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability">
+    <owl:Class rdf:about="&factor;Non-ItalianApplicationsVsQualityAndMaintainability">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -921,7 +921,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
+    <owl:Class rdf:about="&factor;PackagesDocumentationVsSystemAnalysis">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -929,7 +929,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/PackagesVsDocumentation -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+    <owl:Class rdf:about="&factor;PackagesVsDocumentation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -937,7 +937,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsRequirements -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
+    <owl:Class rdf:about="&factor;QualityVsRequirements">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -945,7 +945,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsSystemAnalysis -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsSystemAnalysis">
+    <owl:Class rdf:about="&factor;QualityVsSystemAnalysis">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -953,7 +953,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsTimeAndBudget -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/QualityVsTimeAndBudget">
+    <owl:Class rdf:about="&factor;QualityVsTimeAndBudget">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -961,7 +961,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/RequirementsVsMethodologies -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/RequirementsVsMethodologies">
+    <owl:Class rdf:about="&factor;RequirementsVsMethodologies">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -969,7 +969,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
+    <owl:Class rdf:about="&factor;RequirementsVsTechnicalJargon">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -977,7 +977,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation">
+    <owl:Class rdf:about="&factor;SystemAnalysisVsDocumentation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -985,7 +985,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies -->
 
-    <owl:Class rdf:about="https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies">
+    <owl:Class rdf:about="&factor;WebTechnologiesVsMethodologies">
         <rdfs:subClassOf rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
     </owl:Class>
     
@@ -1886,7 +1886,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
+    <owl:NamedIndividual rdf:about="&factor;ApplicationAndMaintenanceContractsVsDocumentation">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
@@ -1907,7 +1907,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ContractingAndSkills -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ContractingAndSkills">
+    <owl:NamedIndividual rdf:about="&factor;ContractingAndSkills">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
@@ -1921,7 +1921,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/CustomSoftwareQuality -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/CustomSoftwareQuality">
+    <owl:NamedIndividual rdf:about="&factor;CustomSoftwareQuality">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
@@ -1934,7 +1934,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis">
+    <owl:NamedIndividual rdf:about="&factor;DataAnalysisVsFunctionalAnalysis">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
@@ -1947,7 +1947,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates">
+    <owl:NamedIndividual rdf:about="&factor;DeveloperProfessionalismVsRates">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&arc-alignment;Environment"/>
@@ -1960,7 +1960,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
+    <owl:NamedIndividual rdf:about="&factor;DeveloperProfessionalismVsSkills">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&prc-maturity;Management"/>
@@ -1973,7 +1973,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DocumentationStandardsAndTools -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
+    <owl:NamedIndividual rdf:about="&factor;DocumentationStandardsAndTools">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
@@ -1987,7 +1987,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
+    <owl:NamedIndividual rdf:about="&factor;DocumentationVsTimeAndBudget">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureRational"/>
@@ -2007,7 +2007,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses">
+    <owl:NamedIndividual rdf:about="&factor;EstablishmentOfInternalAndExternalDevelopmentProcesses">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&prc-maturity;Acquisition"/>
@@ -2020,7 +2020,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
+    <owl:NamedIndividual rdf:about="&factor;FunctionalAnalysisVsDataModeling">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
@@ -2031,7 +2031,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts">
+    <owl:NamedIndividual rdf:about="&factor;IncreaseOfMaintenanceCosts">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
         <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
@@ -2047,7 +2047,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity">
+    <owl:NamedIndividual rdf:about="&factor;InterfacesArchitecturalComplexity">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
         <usesConcept rdf:resource="&prc-maturity;Development"/>
@@ -2060,7 +2060,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability">
+    <owl:NamedIndividual rdf:about="&factor;ItalianApplicationsVsQualityAndMaintainability">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
@@ -2078,7 +2078,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/LackingToolsAndMethodologies -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/LackingToolsAndMethodologies">
+    <owl:NamedIndividual rdf:about="&factor;LackingToolsAndMethodologies">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
@@ -2098,7 +2098,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism">
+    <owl:NamedIndividual rdf:about="&factor;LowerDevelopersExpertiseAndProfessionalism">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
@@ -2110,7 +2110,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality">
+    <owl:NamedIndividual rdf:about="&factor;MeasurementOfSoftwareQuality">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
@@ -2130,7 +2130,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/ModuleInterfacesComplexity -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/ModuleInterfacesComplexity">
+    <owl:NamedIndividual rdf:about="&factor;ModuleInterfacesComplexity">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureModel"/>
@@ -2147,7 +2147,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity">
+    <owl:NamedIndividual rdf:about="&factor;NewPackagesFunctionalitiesVsComplexity">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
         <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
@@ -2166,7 +2166,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability">
+    <owl:NamedIndividual rdf:about="&factor;Non-ItalianApplicationsVsQualityAndMaintainability">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureFramework"/>
         <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
@@ -2184,7 +2184,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
+    <owl:NamedIndividual rdf:about="&factor;PackagesDocumentationVsSystemAnalysis">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Environment"/>
         <usesConcept rdf:resource="&arc-alignment;System-of-Interest"/>
@@ -2198,7 +2198,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/PackagesVsDocumentation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+    <owl:NamedIndividual rdf:about="&factor;PackagesVsDocumentation">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureViewpoint"/>
@@ -2218,7 +2218,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsRequirements -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
+    <owl:NamedIndividual rdf:about="&factor;QualityVsRequirements">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureViewpoint"/>
@@ -2231,7 +2231,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsSystemAnalysis -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsSystemAnalysis">
+    <owl:NamedIndividual rdf:about="&factor;QualityVsSystemAnalysis">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureView"/>
         <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
@@ -2247,7 +2247,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/QualityVsTimeAndBudget -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/QualityVsTimeAndBudget">
+    <owl:NamedIndividual rdf:about="&factor;QualityVsTimeAndBudget">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Concern"/>
         <usesConcept rdf:resource="&prc-maturity;Development"/>
@@ -2266,7 +2266,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/RequirementsVsMethodologies -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/RequirementsVsMethodologies">
+    <owl:NamedIndividual rdf:about="&factor;RequirementsVsMethodologies">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
         <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
@@ -2279,7 +2279,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
+    <owl:NamedIndividual rdf:about="&factor;RequirementsVsTechnicalJargon">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Stakeholder"/>
         <usesConcept rdf:resource="&prc-maturity;Development"/>
@@ -2291,7 +2291,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation">
+    <owl:NamedIndividual rdf:about="&factor;SystemAnalysisVsDocumentation">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;ArchitectureDescription"/>
         <usesConcept rdf:resource="&prc-maturity;Documentation"/>
@@ -2307,7 +2307,7 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
 
     <!-- https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies -->
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies">
+    <owl:NamedIndividual rdf:about="&factor;WebTechnologiesVsMethodologies">
         <rdf:type rdf:resource="https://w3id.org/squap/SoftwareQualityFactor"/>
         <usesConcept rdf:resource="&arc-alignment;Correspondence"/>
         <usesConcept rdf:resource="&arc-alignment;CorrespondenceRules"/>
@@ -3180,20 +3180,24 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Organisational">
         <rdfs:label>Organisational</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/InterfacesArchitecturalComplexity">
+    <rdf:Description rdf:about="&factor;InterfacesArchitecturalComplexity">
         <rdfs:label>Interfaces architectural complexity</rdfs:label>
+        <rdfs:comment xml:lang="en">This factor is a direct consequence of the first one. Module interfaces complexity led to a typical anti-pattern.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Security">
         <rdfs:label>Security</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/LackingToolsAndMethodologies">
+    <rdf:Description rdf:about="&factor;LackingToolsAndMethodologies">
         <rdfs:label>Lacking tools and methodologies</rdfs:label>
+        <rdfs:comment xml:lang="en">Finding and implementing the right tools &amp; methodologies is quite a hard task.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/ItalianApplicationsVsQualityAndMaintainability">
+    <rdf:Description rdf:about="&factor;ItalianApplicationsVsQualityAndMaintainability">
         <rdfs:label>Italian applications vs quality and maintainability</rdfs:label>
+        <rdfs:comment xml:lang="en">Regarding Italian applications, they appear to have more functionalities but incur in higher maintenance costs.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/DataAnalysisVsFunctionalAnalysis">
+    <rdf:Description rdf:about="&factor;DataAnalysisVsFunctionalAnalysis">
         <rdfs:label>Data analysis vs functional analysis</rdfs:label>
+        <rdfs:comment xml:lang="en">Poor data analysis influences functional analysis and so, system integrity.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Safety">
         <rdfs:label>Safety</rdfs:label>
@@ -3201,32 +3205,36 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;FunctionalAppropriateness">
         <rdfs:label>Functional appropriateness</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/RequirementsVsMethodologies">
+    <rdf:Description rdf:about="&factor;RequirementsVsMethodologies">
         <rdfs:label>Requirements vs methodologies</rdfs:label>
+        <rdfs:comment xml:lang="en">Poor methodologies to elicit business goals and needs lead to the definition of unclear software requirements.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;SubjectiveCharacteristic">
         <rdfs:label>Subjective characteristic</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/EstablishmentOfInternalAndExternalDevelopmentProcesses">
+    <rdf:Description rdf:about="&factor;EstablishmentOfInternalAndExternalDevelopmentProcesses">
         <rdfs:label>Establishment of internal and external development processes</rdfs:label>
+        <rdfs:comment xml:lang="en">Merging internal and external development processes is extremely difficult.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&factor;DeveloperProfessionalismVsSkills">
+        <rdfs:label>Developer professionalism vs skills</rdfs:label>
+        <rdfs:comment xml:lang="en">No adequate resources to invest in education and to train developers, especially those with no formal education in IT.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;CompatibilityCompliance">
         <rdfs:label>Compatibility compliance</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsSkills">
-        <rdfs:label>Developer professionalism vs skills</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/RequirementsVsTechnicalJargon">
+    <rdf:Description rdf:about="&factor;RequirementsVsTechnicalJargon">
         <rdfs:label>Requirements vs technical jargon</rdfs:label>
+        <rdfs:comment xml:lang="en">The (mis-)use of technical jargon of different departments for requirement elicitation leads to low software quality.</rdfs:comment>
     </rdf:Description>
-    <rdf:Description rdf:about="&prc-maturity;Management">
-        <rdfs:label>Management</rdfs:label>
+    <rdf:Description rdf:about="&sw-quality;Portability">
+        <rdfs:label>Portability</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureRational">
         <rdfs:label>Architecture rational</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Portability">
-        <rdfs:label>Portability</rdfs:label>
+    <rdf:Description rdf:about="&prc-maturity;Management">
+        <rdfs:label>Management</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureModel">
         <rdfs:label>Architecture model</rdfs:label>
@@ -3252,11 +3260,11 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;AccessibilityInUse">
         <rdfs:label>Accessibility in use</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Modularity">
-        <rdfs:label>Modularity</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;UsabilityInUse">
         <rdfs:label>Usability in use</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Modularity">
+        <rdfs:label>Modularity</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;ContextExtendibilityInUse">
         <rdfs:label>Context extendibility in use</rdfs:label>
@@ -3273,17 +3281,18 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;MaintainabilityCompliance">
         <rdfs:label>Maintainability compliance</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/CustomSoftwareQuality">
+    <rdf:Description rdf:about="&factor;CustomSoftwareQuality">
         <rdfs:label>Custom software quality</rdfs:label>
+        <rdfs:comment xml:lang="en">The perceived quality of custom software applications is decreasing.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Supporting">
         <rdfs:label>Supporting</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&prc-maturity;Maintenance">
-        <rdfs:label>Maintenance</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;QualityInUse">
         <rdfs:label>Quality in use</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&prc-maturity;Maintenance">
+        <rdfs:label>Maintenance</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Recoverability">
         <rdfs:label>Recoverability</rdfs:label>
@@ -3300,8 +3309,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Comfort">
         <rdfs:label>Comfort</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/SystemAnalysisVsDocumentation">
+    <rdf:Description rdf:about="&factor;SystemAnalysisVsDocumentation">
         <rdfs:label>System analysis vs documentation</rdfs:label>
+        <rdfs:comment xml:lang="en">Inadequate documentation impacts on the system analysis and so on software quality.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Development">
         <rdfs:label>Development</rdfs:label>
@@ -3309,8 +3319,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;AppropriatenessRecognisability">
         <rdfs:label>Appropriateness recognisability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+    <rdf:Description rdf:about="&factor;PackagesVsDocumentation">
         <rdfs:label>Packages vs documentation</rdfs:label>
+        <rdfs:comment xml:lang="en">The lack of documentation for software packages is perceived as a commercial strategy of suppliers to lock-in customers.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Testability">
         <rdfs:label>Testability</rdfs:label>
@@ -3327,11 +3338,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;JointReview">
         <rdfs:label>Joint review</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&factor;NewPackagesFunctionalitiesVsComplexity">
+        <rdfs:label>New packages functionalities vs complexity</rdfs:label>
+        <rdfs:comment xml:lang="en">The demand for more functionalities rose in the last years, along with their complexity.</rdfs:comment>
+    </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureDescription">
         <rdfs:label>Architecture description</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/NewPackagesFunctionalitiesVsComplexity">
-        <rdfs:label>New packages functionalities vs complexity</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;FaultTolerance">
         <rdfs:label>Fault tolerance</rdfs:label>
@@ -3345,8 +3357,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Pleasure">
         <rdfs:label>Pleasure</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/DeveloperProfessionalismVsRates">
+    <rdf:Description rdf:about="&factor;DeveloperProfessionalismVsRates">
         <rdfs:label>Developer professionalism vs rates</rdfs:label>
+        <rdfs:comment xml:lang="en">Decreasing developer&apos;s professionalism and the decrease of professional rates appears to be quite connected.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;UsabilityInUseCompliance">
         <rdfs:label>Usability in use compliance</rdfs:label>
@@ -3369,17 +3382,18 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;ConfigurationManagement">
         <rdfs:label>Configuration management</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/ModuleInterfacesComplexity">
+    <rdf:Description rdf:about="&factor;ModuleInterfacesComplexity">
         <rdfs:label>Module interfaces complexity</rdfs:label>
+        <rdfs:comment xml:lang="en">A banking information system is characterized by a high number of modules;if these are strongly coupled this increases the number of interfaces and their complexity.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;FlexibilityInUse">
         <rdfs:label>Flexibility in use</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&sw-quality;Trust">
-        <rdfs:label>Trust</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;ProblemResolution">
         <rdfs:label>Problem resolution</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&sw-quality;Trust">
+        <rdfs:label>Trust</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;CorrespondenceRules">
         <rdfs:label>Correspondence rules</rdfs:label>
@@ -3390,26 +3404,26 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;PerformanceEfficiency">
         <rdfs:label>Performance efficiency</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&prc-maturity;Documentation">
-        <rdfs:label>Documentation</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Attractiveness">
         <rdfs:label>Attractiveness</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&arc-alignment;ArchitectureViewpoint">
-        <rdfs:label>Architecture viewpoint</rdfs:label>
+    <rdf:Description rdf:about="&prc-maturity;Documentation">
+        <rdfs:label>Documentation</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Transferability">
         <rdfs:label>Transferability</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&arc-alignment;ArchitectureViewpoint">
+        <rdfs:label>Architecture viewpoint</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;Correspondence">
         <rdfs:label>Correspondence</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="&arc-alignment;Stakeholder">
-        <rdfs:label>Stakeholder</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Validation">
         <rdfs:label>Validation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&arc-alignment;Stakeholder">
+        <rdfs:label>Stakeholder</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Infrastructure">
         <rdfs:label>Infrastructure</rdfs:label>
@@ -3420,11 +3434,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&prc-maturity;Primary">
         <rdfs:label>Primary</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/DocumentationStandardsAndTools">
-        <rdfs:label>Documentation standards and tools</rdfs:label>
-    </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Improvement">
         <rdfs:label>Improvement</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="&factor;DocumentationStandardsAndTools">
+        <rdfs:label>Documentation standards and tools</rdfs:label>
+        <rdfs:comment xml:lang="en">Poor documentation hinders software maintainability and increases evolution costs.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Training">
         <rdfs:label>Training</rdfs:label>
@@ -3432,23 +3447,27 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;EfficiencyInUse">
         <rdfs:label>Efficiency in use</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/QualityVsSystemAnalysis">
+    <rdf:Description rdf:about="&factor;QualityVsSystemAnalysis">
         <rdfs:label>Quality vs system analysis</rdfs:label>
+        <rdfs:comment xml:lang="en">Even though the design phase is perceived as the most important up-front activity, it is poorly implemented.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="&factor;DocumentationVsTimeAndBudget">
+        <rdfs:label>Documentation vs time and budget</rdfs:label>
+        <rdfs:comment xml:lang="en">Time and budget constraints have a direct impact on software documentation. Due to low budget for new developments and urgency for new applications, documentation is the first element which is skipped.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;FunctionalCorrectness">
         <rdfs:label>Functional correctness</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/DocumentationVsTimeAndBudget">
-        <rdfs:label>Documentation vs time and budget</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/FunctionalAnalysisVsDataModeling">
+    <rdf:Description rdf:about="&factor;FunctionalAnalysisVsDataModeling">
         <rdfs:label>Functional analysis vs data modeling</rdfs:label>
+        <rdfs:comment xml:lang="en">Difficulties in functional analysis lies in bad data modeling and identification of data sources.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;ContextConformityInUse">
         <rdfs:label>Context conformity in use</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/WebTechnologiesVsMethodologies">
+    <rdf:Description rdf:about="&factor;WebTechnologiesVsMethodologies">
         <rdfs:label>Web technologies vs methodologies</rdfs:label>
+        <rdfs:comment xml:lang="en">There is the idea that the adoption of such technologies lead to less rigorous approach to software engineering. In this regard, Agile is considered a scapegoat of such sloppiness.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ObjectiveCharacteristic">
         <rdfs:label>Objective characteristic</rdfs:label>
@@ -3456,8 +3475,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Modifiability">
         <rdfs:label>Modifiability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/IncreaseOfMaintenanceCosts">
+    <rdf:Description rdf:about="&factor;IncreaseOfMaintenanceCosts">
         <rdfs:label>Increase of maintenance costs</rdfs:label>
+        <rdfs:comment xml:lang="en">Some factors have a direct impact on maintenance costs. The overall architectural complexity, the decreasing software quality and incomplete documentation are the most important drivers of high maintenance costs and time.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;EaseOfUse">
         <rdfs:label>Ease of use</rdfs:label>
@@ -3468,11 +3488,12 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Appropriateness">
         <rdfs:label>Appropriateness</rdfs:label>
     </rdf:Description>
+    <rdf:Description rdf:about="&factor;QualityVsRequirements">
+        <rdfs:label>Quality vs requirements</rdfs:label>
+        <rdfs:comment xml:lang="en">Poorly defined requirements lead to misunderstandings with software developers, which will deliver lower quality software. The functional quality will be low if the requirements&apos; clarity is low.</rdfs:comment>
+    </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Reliability">
         <rdfs:label>Reliability</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/QualityVsRequirements">
-        <rdfs:label>Quality vs requirements</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;ResourceUtilization">
         <rdfs:label>Resource utilization</rdfs:label>
@@ -3480,14 +3501,17 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;PublicHealthAndSafety">
         <rdfs:label>Public health and safety</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/Non-ItalianApplicationsVsQualityAndMaintainability">
+    <rdf:Description rdf:about="&factor;Non-ItalianApplicationsVsQualityAndMaintainability">
         <rdfs:label>Non-Italian applications vs quality and maintainability</rdfs:label>
+        <rdfs:comment xml:lang="en">Non-Italian applications are more maintainable but have less functionalities.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Audit">
         <rdfs:label>Audit</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/ApplicationAndMaintenanceContractsVsDocumentation">
+    <rdf:Description rdf:about="&factor;ApplicationAndMaintenanceContractsVsDocumentation">
         <rdfs:label>Application and maintenance contracts vs documentation</rdfs:label>
+        <rdfs:comment xml:lang="en">Application &amp; Maintenance (AM) contracts are set to outsource the development and maintenance, to decrease internal costs.Typically, they do not provide an adequate documentation.</rdfs:comment>
+        <dc:description rdf:resource="https://raw.githubusercontent.com/anuzzolese/squap/master/ont/images/factors/ApplicationAndMaintenanceContractsVsDocumentation.png"/>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Helpfulness">
         <rdfs:label>Helpfulness</rdfs:label>
@@ -3501,8 +3525,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Accountability">
         <rdfs:label>Accountability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/PackagesDocumentationVsSystemAnalysis">
+    <rdf:Description rdf:about="&factor;PackagesDocumentationVsSystemAnalysis">
         <rdfs:label>Packages documentation vs system analysis</rdfs:label>
+        <rdfs:comment xml:lang="en">The lack of documentation in packages impacts directly on the logical data model and quality controls.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&prc-maturity;Verification">
         <rdfs:label>Verification</rdfs:label>
@@ -3513,8 +3538,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;SoftwareProductQuality">
         <rdfs:label>Software product quality</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/QualityVsTimeAndBudget">
+    <rdf:Description rdf:about="&factor;QualityVsTimeAndBudget">
         <rdfs:label>Quality vs time and budget</rdfs:label>
+        <rdfs:comment xml:lang="en">The whole panel agreed unanimously that there is a direct relationship among quality and time and budget.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Maintainability">
         <rdfs:label>Maintainability</rdfs:label>
@@ -3528,14 +3554,16 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&arc-alignment;Environment">
         <rdfs:label>Environment</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/LowerDevelopersExpertiseAndProfessionalism">
+    <rdf:Description rdf:about="&factor;LowerDevelopersExpertiseAndProfessionalism">
         <rdfs:label>Lower developers expertise and professionalism</rdfs:label>
+        <rdfs:comment xml:lang="en">Short time to market expectations and shrinking IT budget is generally considered the main reason for low software quality.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&sw-quality;Learnability">
         <rdfs:label>Learnability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/ContractingAndSkills">
+    <rdf:Description rdf:about="&factor;ContractingAndSkills">
         <rdfs:label>Contracting and skills</rdfs:label>
+        <rdfs:comment xml:lang="en">Outsourcing is the main cause of poor software quality.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="&arc-alignment;ArchitectureFramework">
         <rdfs:label>Architecture framework</rdfs:label>
@@ -3552,8 +3580,9 @@ High rdf:type Person and (some hasHeight (Height and (oneOf isTallerThan 185) an
     <rdf:Description rdf:about="&sw-quality;Reusability">
         <rdfs:label>Reusability</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://w3id.org/squap/Factor/MeasurementOfSoftwareQuality">
+    <rdf:Description rdf:about="&factor;MeasurementOfSoftwareQuality">
         <rdfs:label>Measurement of software quality</rdfs:label>
+        <rdfs:comment xml:lang="en">Losing control over the system quality is a concern.</rdfs:comment>
     </rdf:Description>
 </rdf:RDF>
 
