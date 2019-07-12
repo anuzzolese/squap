@@ -1,358 +1,62 @@
-<?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY squap "https://w3id.org/squap/" >
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY prc-maturity "https://w3id.org/squap/ProcessMaturity/" >
-    <!ENTITY sw-quality "https://w3id.org/squap/SoftwareQuality/" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-    <!ENTITY arc-alignment "https://w3id.org/squap/ArchitecturalAlignment/" >
-    <!ENTITY factor "https://w3id.org/squap/SoftwareSystemQualityFactor/" >
-]>
-
-
-<rdf:RDF xmlns="&squap;examples/factors-as-inds.rdf"
-     xml:base="&squap;examples/factors-as-inds.rdf"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:sw-quality="&squap;SoftwareQuality/"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:prc-maturity="&squap;ProcessMaturity/"
-     xmlns:squap="https://w3id.org/squap/"
-     xmlns:arc-alignment="&squap;ArchitecturalAlignment/"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:factor="&squap;SoftwareSystemQualityFactor/"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="&squap;examples/factors-as-inds.rdf"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/squap/affectsAssessment -->
-
-    <owl:ObjectProperty rdf:about="&squap;affectsAssessment"/>
-    
-
-
-    <!-- https://w3id.org/squap/assesses -->
-
-    <owl:ObjectProperty rdf:about="&squap;assesses"/>
-    
-
-
-    <!-- https://w3id.org/squap/hasGrade -->
-
-    <owl:ObjectProperty rdf:about="&squap;hasGrade"/>
-    
-
-
-    <!-- https://w3id.org/squap/hasUnitOfMeasure -->
-
-    <owl:ObjectProperty rdf:about="&squap;hasUnitOfMeasure"/>
-    
-
-
-    <!-- https://w3id.org/squap/specializes -->
-
-    <owl:ObjectProperty rdf:about="&squap;specializes"/>
-    
-
-
-    <!-- https://w3id.org/squap/usesConcept -->
-
-    <owl:ObjectProperty rdf:about="&squap;usesConcept"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/squap/grade -->
-
-    <owl:DatatypeProperty rdf:about="&squap;grade"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#Thing -->
-
-    <owl:Class rdf:about="&owl;Thing"/>
-    
-
-
-    <!-- https://w3id.org/squap/ArchitecturalAlignment -->
-
-    <owl:Class rdf:about="&squap;ArchitecturalAlignment">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/ArchitecturalAlignmentAssessment -->
-
-    <owl:Class rdf:about="&squap;ArchitecturalAlignmentAssessment">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/Grade -->
-
-    <owl:Class rdf:about="&squap;Grade">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/ProcessMaturity -->
-
-    <owl:Class rdf:about="&squap;ProcessMaturity">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/ProcessMaturityAssessment -->
-
-    <owl:Class rdf:about="&squap;ProcessMaturityAssessment">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareQuality -->
-
-    <owl:Class rdf:about="&squap;SoftwareQuality">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareQualityAssessment -->
-
-    <owl:Class rdf:about="&squap;SoftwareQualityAssessment">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareQualityFactor -->
-
-    <owl:Class rdf:about="&squap;SoftwareQualityFactor">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- https://w3id.org/squap/UnitOfMeasure -->
-
-    <owl:Class rdf:about="&squap;UnitOfMeasure">
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- https://w3id.org/squap/ArchitecturalAlignment/Correspondence -->
-
-    <owl:NamedIndividual rdf:about="&squap;ArchitecturalAlignment/Correspondence">
-        <rdf:type rdf:resource="&squap;ArchitecturalAlignment"/>
-        <squap:specializes rdf:resource="&squap;ArchitecturalAlignment/ObjectiveCharacteristic"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/ArchitecturalAlignment/ObjectiveCharacteristic -->
-
-    <owl:NamedIndividual rdf:about="&squap;ArchitecturalAlignment/ObjectiveCharacteristic">
-        <rdf:type rdf:resource="&squap;ArchitecturalAlignment"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/ProcessMaturity/Documentation -->
-
-    <owl:NamedIndividual rdf:about="&squap;ProcessMaturity/Documentation">
-        <rdf:type rdf:resource="&squap;ProcessMaturity"/>
-        <squap:specializes rdf:resource="&squap;ProcessMaturity/Supporting"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/ProcessMaturity/Supporting -->
-
-    <owl:NamedIndividual rdf:about="&squap;ProcessMaturity/Supporting">
-        <rdf:type rdf:resource="&squap;ProcessMaturity"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareQuality/Compatibility -->
-
-    <owl:NamedIndividual rdf:about="&squap;SoftwareQuality/Compatibility">
-        <rdf:type rdf:resource="&squap;SoftwareQuality"/>
-        <squap:specializes rdf:resource="&squap;SoftwareQuality/SoftwareProductQuality"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareQuality/SoftwareProductQuality -->
-
-    <owl:NamedIndividual rdf:about="&squap;SoftwareQuality/SoftwareProductQuality">
-        <rdf:type rdf:resource="&squap;SoftwareQuality"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/SoftwareSystemQualityFactor/IncreaseOfMaintenanceCosts -->
-
-    <owl:NamedIndividual rdf:about="&squap;SoftwareSystemQualityFactor/IncreaseOfMaintenanceCosts">
-        <rdf:type rdf:resource="&squap;SoftwareQualityFactor"/>
-        <squap:usesConcept rdf:resource="&squap;ArchitecturalAlignment/Correspondence"/>
-        <squap:usesConcept rdf:resource="&squap;ProcessMaturity/Documentation"/>
-        <squap:usesConcept rdf:resource="&squap;SoftwareQuality/Compatibility"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#compatibility-assessment"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#correspondence-assessment"/>
-        <squap:affectsAssessment rdf:resource="&squap;examples/factors-as-inds.rdf#documentation-assessment"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#compatibility-assessment -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#compatibility-assessment">
-        <rdf:type rdf:resource="&squap;SoftwareQualityAssessment"/>
-        <squap:assesses rdf:resource="&squap;SoftwareQuality/Compatibility"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#compatibility-grade"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#sonarqube-measure"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#compatibility-grade -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#compatibility-grade">
-        <rdf:type rdf:resource="&squap;Grade"/>
-        <squap:grade rdf:datatype="&xsd;string">B</squap:grade>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#correspondence-assessment -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#correspondence-assessment">
-        <rdf:type rdf:resource="&squap;ArchitecturalAlignmentAssessment"/>
-        <squap:assesses rdf:resource="&squap;ArchitecturalAlignment/Correspondence"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#correspondence-grade"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#correspondence-grade -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#correspondence-grade">
-        <rdf:type rdf:resource="&squap;Grade"/>
-        <squap:grade rdf:datatype="&xsd;int">7</squap:grade>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#likert-scale-1-7"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#documentation-assessment -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#documentation-assessment">
-        <rdf:type rdf:resource="&squap;ProcessMaturityAssessment"/>
-        <squap:assesses rdf:resource="&squap;ProcessMaturity/Documentation"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasGrade rdf:resource="&squap;examples/factors-as-inds.rdf#documentation-grade"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#documentation-grade -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#documentation-grade">
-        <rdf:type rdf:resource="&squap;Grade"/>
-        <squap:grade rdf:datatype="&xsd;int">6</squap:grade>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-        <squap:hasUnitOfMeasure rdf:resource="&squap;examples/factors-as-inds.rdf#likert-scale-1-7"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#likert-scale-1-7 -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#likert-scale-1-7">
-        <rdf:type rdf:resource="&squap;UnitOfMeasure"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://w3id.org/squap/examples/factors-as-inds.rdf#sonarqube-measure -->
-
-    <owl:NamedIndividual rdf:about="&squap;examples/factors-as-inds.rdf#sonarqube-measure">
-        <rdf:type rdf:resource="&squap;UnitOfMeasure"/>
-        <rdfs:isDefinedBy rdf:resource="&squap;examples/factors-as-inds.rdf"/>
-    </owl:NamedIndividual>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:prc="https://w3id.org/squap/ProcessMaturity/"
+    xmlns:arc="https://w3id.org/squap/ArchitecturalAlignment/"
+    xmlns:squap="https://w3id.org/squap/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="https://w3id.org/squap/examples/gqm/"
+    xmlns:sw="https://w3id.org/squap/SoftwareQuality/">
+  <squap:SoftwareQualityResult rdf:about="https://w3id.org/squap/examples/gqm/compatibility-result">
+    <squap:hasValue>
+      <squap:Value rdf:about="https://w3id.org/squap/examples/gqm/sonarqube-value-b">
+        <squap:value>B</squap:value>
+      </squap:Value>
+    </squap:hasValue>
+    <squap:hasMetric>
+      <squap:Metric rdf:about="https://w3id.org/squap/examples/gqm/sonarqube-sw-quality">
+        <squap:hasParameter>
+          <squap:Parameter rdf:about="https://w3id.org/squap/examples/gqm/sonarqube-params">
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/sonarqube-value-c"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/sonarqube-value-a"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/sonarqube-value-b"/>
+          </squap:Parameter>
+        </squap:hasParameter>
+      </squap:Metric>
+    </squap:hasMetric>
+    <squap:assesses rdf:resource="https://w3id.org/squap/SoftwareQuality/Compatibility"/>
+  </squap:SoftwareQualityResult>
+  <squap:ProcessMaturityResult rdf:about="https://w3id.org/squap/examples/gqm/documentation-result">
+    <squap:hasValue>
+      <squap:Value rdf:about="https://w3id.org/squap/examples/gqm/likert-value-6">
+        <squap:value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</squap:value>
+      </squap:Value>
+    </squap:hasValue>
+    <squap:hasMetric>
+      <squap:Metric rdf:about="https://w3id.org/squap/examples/gqm/likert-based-prc-maturity">
+        <squap:hasParameter>
+          <squap:Parameter rdf:about="https://w3id.org/squap/examples/gqm/likert-scale-1-7">
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-5"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-4"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-3"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-2"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-1"/>
+            <squap:parametrizes rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-6"/>
+            <squap:parametrizes>
+              <squap:Value rdf:about="https://w3id.org/squap/examples/gqm/likert-value-7">
+                <squap:value rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                >7</squap:value>
+              </squap:Value>
+            </squap:parametrizes>
+          </squap:Parameter>
+        </squap:hasParameter>
+      </squap:Metric>
+    </squap:hasMetric>
+    <squap:assesses rdf:resource="https://w3id.org/squap/ProcessMaturity/Documentation"/>
+  </squap:ProcessMaturityResult>
+  <squap:ArchitecturalAlignmentResult rdf:about="https://w3id.org/squap/examples/gqm/correspondenceresult">
+    <squap:hasValue rdf:resource="https://w3id.org/squap/examples/gqm/likert-value-7"/>
+    <squap:hasMetric rdf:resource="https://w3id.org/squap/examples/gqm/likert-scale-1-7"/>
+    <squap:assesses rdf:resource="https://w3id.org/squap/ArchitecturalAlignment/Correspondence"/>
+  </squap:ArchitecturalAlignmentResult>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
-

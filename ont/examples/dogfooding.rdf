@@ -1,0 +1,32 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:prc="https://w3id.org/squap/ProcessMaturity/"
+    xmlns:squap="https://w3id.org/squap/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:factor="https://w3id.org/squap/Factor/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="https://w3id.org/squap/examples/dogfooding/">
+  <squap:FactorOccurrence rdf:about="https://w3id.org/squap/examples/dogfooding/process-maturity-occurrence">
+    <squap:isAffectedBy>
+      <squap:MeasurementResult rdf:about="https://w3id.org/squap/examples/dogfooding/documentation-measurement-result">
+        <squap:hasMetric>
+          <squap:Metric rdf:about="https://w3id.org/squap/examples/dogfooding/protege-ontology-annotations-metric">
+            <squap:assess>
+              <squap:ProcessMaturity rdf:about="https://w3id.org/squap/ProcessMaturity/Documentation"/>
+            </squap:assess>
+          </squap:Metric>
+        </squap:hasMetric>
+        <squap:hasValue>
+          <squap:Value rdf:about="https://w3id.org/squap/examples/dogfooding/documentation-measurement-result-value">
+            <squap:assess rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">233</squap:assess>
+          </squap:Value>
+        </squap:hasValue>
+      </squap:MeasurementResult>
+    </squap:isAffectedBy>
+    <squap:satisfiesFactor>
+      <squap:Factor rdf:about="https://w3id.org/squap/Factor/PackagesVsDocumentation">
+        <squap:usesConcept rdf:resource="https://w3id.org/squap/ProcessMaturity/Documentation"/>
+      </squap:Factor>
+    </squap:satisfiesFactor>
+  </squap:FactorOccurrence>
+</rdf:RDF>
