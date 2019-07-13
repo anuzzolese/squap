@@ -6,6 +6,7 @@ However, their interaction has been poorly studied, so far. The SQuAP model (Sof
 Hence, SQuAP makes such relations emerge rigorously, although informally. 
 SQaAP-Ont is an OWL ontology that formalises those relations in order to represent and reason via Linked Data about software engineering in a three-dimensional model consisting of quality, architecture, and process characteristics.
 
+ - [The SQuAP model](https://drive.google.com/open?id=1GUzVDL-yVopJIq-W7rxg-FI2UC2jf8qH)
  - [List of factors with a short textual description](http://stlab.istc.cnr.it/squap/documentation/factors.html#factors)
  - [Mappings between ISO standards and factors](http://stlab.istc.cnr.it/squap/documentation/factors.html#mappings)
 
